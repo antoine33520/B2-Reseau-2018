@@ -2,6 +2,7 @@
 ## Supports & TPs
 
 * Supports de cours : 
+  * [Cours 1 : Remise dans le bain (IP, MAC, ports, création + install de VM)](./1.md)
 
 * [Lexique](./lexique.md)
 
@@ -44,4 +45,4 @@
 * connaissances techniques en réseau
   * modèle OSI et principaux protocoles
   * Internet
-  * design réseau
+  * design infra réseau
