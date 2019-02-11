@@ -223,6 +223,7 @@
   * donc si on a deux interfaces réseau, on a deux ports 443 (entre autres) : un sur chaque interface
 * on peut demander à des applications "d'écouter" sur un ou plusieurs ports
 * *par exemple, pour un site web, on demande souvent au serveur Web d'écouter sur le port 443 pour HTTPS*
+* cette notion sera approfondie au fil des cours
 
 ### Routage ou *routing*
 * c'est le fait de mettre en place et de configurer un [routeur](#routeur)
