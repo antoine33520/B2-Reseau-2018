@@ -25,7 +25,6 @@
 #### *ARP* : Adresse Resolution Protocol
 * c'est dans le nom : il permet de résoudre des adresses
 * plus précisément, il **permet de demander sur le réseau la MAC de quelqu'un, quand on connaît son IP**
-* pour plus de détails sur le fonctionnement d'ARP, vous pouvez vous référer [au cours sur le sujet](./5.md#arp)
 
 ---
 
@@ -41,9 +40,8 @@
 * une *adresse IP* est composée de 32 bits
   * par exemple : `192.168.1.1`
 * pour comprendre l'IP on a besoin du [masque de sous-réseau](#masque-de-sous-r%C3%A9seau) qui lui est associé
-* la décomposition d'une *adresse IP* est vue dans le [cours 1](./1.md)
 * il existe des plages réservées d'adresses IP
-  * entre autres, [les adresses privées et publiques](./3.md#ip-privéespubliques)
+  * entre autres, les adresses "privées" et "publiques"
 
 ---
 
@@ -78,7 +76,6 @@
   * il parle le protocole DHCP, et vos PCs aussi
 * **on oppose "l'adresse par DHCP" (ou "adressage dynamique") à "l'adressage statique"**
   * une "IP statique" ça veut dire "une IP **PAS** récupérée *via* DHCP
-* le [cours 6](./6.md#dhcp) est plus détaillé à ce sujet
 
 
 #### *DNS* : Domain Name System
@@ -109,11 +106,10 @@
 ### *FQDN* : Fully Qualified Domain Name
 * c'est le nom complet d'un hôte (= d'une machine) sur le réseau
 * il est la concaténation du nom d'hôte et du domaine
-* [cf. le cours 4](./4.md#noms-de-domaine)
 
 ### *LAN* : Local Area Network
 * réseau local
-* les équipements qui s'y trouvent portent des [adresses privées](./3.md#ip-privéespubliques)
+* les équipements qui s'y trouvent portent des adresses privées
 
 ### *MAC* : Media Access Control
 * on parle l'ici de *l'adresse MAC* ou *adresse physique*
@@ -141,7 +137,7 @@
 ### *WAN* : Wide Area Network
 * réseau étendu
 * celui que vous utilisez le plus est Internet
-  * les équipements qui s'y trouvent portent des [adresses publiques](./3.md#ip-privéespubliques)
+  * les équipements qui s'y trouvent portent des adresses publiques
 
 ## Notions
 
@@ -151,6 +147,8 @@
 * elle correspond à la première adresse disponible d'un réseau
 * exemple :
   * pour l'adresse IP `192.168.1.37/24`, l'adresse de réseau est `192.168.1.0/24`
+
+### Adresse de diffusion (ou *broadcast address*)
 
 #### Pour le [protocole Ethernet](#ethernet)
 
@@ -177,7 +175,6 @@
   * héxadécimal (base 16)
   * base 64 (oui oui, base 64)
   * pour les curieux : en fait l'ASCII normal (pas la table étendue), c'est juste une base 128 hein :)
-* le cours 1 contient [un passage avec des calculs binaires](./1.md#3-exemple-de-manipulation-dip-vue-en-cours)
  
 ### Carte réseau (ou interface réseau)
 * carte physique dans une machine (ou virtuelle)
@@ -202,7 +199,6 @@
   * "j'ai un réseau en `255.255.255.0`"
   * "j'ai un `/24`"
   * "j'ai un réseau avec 256 adresses possibles"
-* la décomposition d'une IP est vue dans le [cours 1](./1.md)
 
 ### Pare-feu ou *firewall*
 * présent sur la plupart des équipements (PCs, serveurs, etc)
@@ -212,7 +208,6 @@
     * par exemple le firewall Windows bloque le `ping` entrant par défaut
   * filtrage du trafic qui sort de la machine
     * surtout utilisé sur des PCs d'entreprise ou sur des serveurs
-* [la notion a été abordée dans le cours 2](./2.md#firewall)
 
 ### Passerelle ou *Gateway*
 * la *passerelle* est un noeud agissant comme pivot, et elle permet de sortir du réseau (de chez vous vers Internet par exemple)
@@ -222,7 +217,6 @@
 * **un réseau qui ne souhaite pas être connecté à d'autres réseaux ne possède pas de passerelle**
 
 ### Ports
-* [le cours est plus complet à ce sujet](./2.md#notion-de-ports)
 * un serveur est une machine qui "écoute" sur un port
   * un client est une machine qui se connecte à un port où un serveur écoute
 * un port est un point d'entrée unique **sur une interface réseau**
@@ -270,7 +264,7 @@
   * et votre box est sympa : elle vous a dit que si vous aviez besoin d'aller sur internet, vous pouviez passer par elle
 
 * **EDIT** : un routeur est un équipement qui fait de l'*IP Forwarding* :
-  * ça veut dire qu'il peut traiter des [paquets IP](5.md#vocabulaire) qui ne lui sont pas destinés
+  * ça veut dire qu'il peut traiter des paquets IP qui ne lui sont pas destinés
   * afin de les faire transiter de réseau en réseau
   * par exemple, vos paquets, quand vous parlez à google, ils sont pas destinés au routeur, m'kay ?
   * **il suffit d'activer ça sur votre PC pour qu'il devienne un routeur** 
@@ -365,7 +359,7 @@ nc 10.1.0.10 9999
 * un *lookup DNS* consiste à demander quelle est l'IP d'un nom donné
   * "à quelle IP se trouve le serveur `www.google.com` ?" par exemple
 * un *reverse lookup DNS* c'est l'inverse : on cherche à connaître à quel nom est associée une IP
-  * "y'a-t-il des [noms de domaines](./4.md#noms-de-domaine) associés à `76.32.43.32` ?" par exemple
+  * "y'a-t-il des noms de domaines associés à `76.32.43.32` ?" par exemple
 
 ### `curl` et `wget`
 * permettent de faire des requêtes [HTTP](#http--hypertext-transfer-protocol)
