@@ -248,6 +248,8 @@ Clonez une deuxième fois le patron pour avoir un deuxième VM.
 [Répéter les opérations de configurations](#allumage-et-configuration-de-la-vm) pour cette deuxième VM. 
 * n'oubliez pas de mettre à jour le fichier `hosts` de la première VM
 
+---
+
 ## 2. Basics
 
 ### `ping` et ARP
@@ -261,10 +263,14 @@ Clonez une deuxième fois le patron pour avoir un deuxième VM.
 
 * récupérer `ping-2.pcap` sur l'hôte et l'analyser dans Wireshark
 
+---
+
 ### `netcat`
 [`netcat` ou `nc`](../../cours/lexique.md#nc-ou-netcat) est un outil très simple de fonctionnement et d'utilisation qui permet d'écouter sur un [port](../../cours/lexique.md#ports), ou de se connecter sur un [port](../../cours/lexique.md#ports) distant. On va l'utiliser pour voir un peu comment fonctionnent des connexions TCP et UDP simples.
 
 Afin de permettre à `netcat` d'écouter sur un port, il faudra l'ouvrir dans le firewall. Le firewall de CentOS n'accepte presque rien par défaut.  
+
+---
 
 #### UDP
 
@@ -274,7 +280,8 @@ Sur `client1`
   * `nc -u -l 8888`
     * `-u` pour UDP
     * `-l` pour "listen" 
-    * `8888` pour le port choisi
+    * `8888` pour le port choisi  
+    
 Sur `client2`
 * se connecter au port 8888 UDP du `client1`
   * `nc -u <IP_CLIENT1> 8888`
@@ -291,6 +298,8 @@ Vous devriez avoir un chat simpliste entre les deux machines. Pendant que la con
   * récupérez sur l'hôte et analysez dans Wireshark
     * hint : raisonnez par comparaison avec les captures précédentes de `ping`
 
+---
+
 #### TCP
 
 Sur `client1`
@@ -298,8 +307,9 @@ Sur `client1`
 * lancer `netcat` pour qu'il écoute sur le port UDP 8888
   * `nc -l 8888` (TCP c'est par défaut avec `netcat`)
     * `-l` pour "listen" 
-    * `8888` pour le port choisi
-Sur `client2`
+    * `8888` pour le port choisi  
+
+Sur `client2` 
 * se connecter au port 8888 UDP du `client1`
   * `nc <IP_CLIENT1> 8888`
 
