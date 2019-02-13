@@ -86,8 +86,7 @@ Idem pour les noms de domaines.
   * *crée un switch qui s'appelle "vboxnetX"*
   * *branche la carte réseau de l'hôte sur le switch*   
 
-
-**Configuration de VirtualBox**
+### Configuration de VirtualBox
 * créer deux host-only
   * `net1` : `10.1.1.0/24`
     * combien y a-t-il d'adresses disponibles dans un `/24` ?
@@ -95,13 +94,13 @@ Idem pour les noms de domaines.
     * combien y a-t-il d'adresses disponibles dans un `/30` ?
     * quelle est l'utilité d'un `/30` ?
 
-**Création de la VM**
+### Création de la VM
 * clone du patron créé ensemble
 * réseau :
   * 1 carte NAT
   * 2 cartes host-only (une dans `net1`, l'autre dans `net2`)
 
-**Allumage et configuration de la VM**    
+### Allumage et configuration de la VM
 * [X] Désactiver SELinux
   * déja fait dans le patron
 * [X] Installation de certains paquets réseau
@@ -216,4 +215,19 @@ Si on résume :
   * il est dans un paquet à destination de `IP`
   * ce paquet est dans un trame à destination de la bonne [adresse MAC](../../cours/lexique.md#mac--media-access-control)
 
-* [II. Communication simple entre deux machines]
+---
+
+# II. Communication simple entre deux machines
+
+Machine | `net1` | `net2`
+--- | --- | ---
+PC | `10.1.1.1` | `10.1.2.1`
+`client1.tp1.b2` | `10.1.1.2` | `10.1.2.2`
+`client2.tp1.b2` | `10.1.1.3` | X
+
+Clonez une deuxième fois le patron pour avoir un deuxième VM. 
+* réseau
+  * 1 carte NAT
+  * 1 carte host-only dans `net1`
+
+Répéter les opérations de configurations pour cette deuxième VM
