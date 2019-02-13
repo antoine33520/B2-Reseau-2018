@@ -18,7 +18,6 @@ Vous trouverez ici quelques mini-procédures pour réaliser certaines opération
 * [Interagir avec le firewall](#interagir-avec-le-firewall)
 * [Gérer sa table ARP](#gérer-sa-table-arp)
 
-
 ---
 
 ### Définir une IP statique
@@ -98,7 +97,7 @@ sudo ifup <INTERFACE_NAME>
 
 * **pour vérifier**
   * `ip route show`
-  
+
 ---
 
 ### Changer son nom de domaine
