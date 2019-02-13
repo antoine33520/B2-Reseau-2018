@@ -63,6 +63,7 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
   * [2. Basics](#2-basics-1)
     * [`ping` et ARP](#ping-et-arp)
     * [`netcat` : TCP et UDP](#netcat)
+  * [3. Bonus : ARP spoofing](#3-bonus--arp-spoofing)
 * [III. Routage statique simple](#iii-routage-statique-simple)
 
 
@@ -290,16 +291,7 @@ Vous devriez avoir un chat simpliste entre les deux machines. Pendant que la con
   * récupérez sur l'hôte et analysez dans Wireshark
     * hint : raisonnez par comparaison avec les captures précédentes de `ping`
 
-
-## 3. Bonus : ARP spoofing
-
-> **Jetez au moins un oeil pour la curiosité.** 
-
-C'est assez facile de faire de l'ARP spoofing (ou ARP cache poisoning) avec une ligne de commande sous la main. C'est un man-in-the-middle qu'on peut réaliser en une commande. Vous pouvez utiliser `arping` pour ça.  
-
-Le but ? Usurpation d'identité sur un réseau local. Essayer de faire croire à `client2` que votre hôte c'est `client1`. [Tout est là](https://sandilands.info/sgordon/arp-spoofing-on-wired-lan). 
-
-#### UDP
+#### TCP
 
 Sur `client1`
 * [ouvrir le port TCP 8888](../../cours/procedures.md#interagir-avec-le-firewall)
@@ -325,6 +317,16 @@ Vous devriez avoir un chat simpliste entre les deux machines. Pendant que la con
   * récupérez sur l'hôte et analysez dans Wireshark
     * hint : raisonnez par comparaison avec la capture précédente de `nc-udp.pcap`
     * hint2 : vous devriez voir le "3-way handshake TCP"
+
+---
+
+## 3. Bonus : ARP spoofing
+
+> **Jetez au moins un oeil pour la curiosité.** 
+
+C'est assez facile de faire de l'ARP spoofing (ou ARP cache poisoning) avec une ligne de commande sous la main. C'est un man-in-the-middle qu'on peut réaliser en une commande. Vous pouvez utiliser `arping` pour ça.  
+
+Le but ? Usurpation d'identité sur un réseau local. Essayer de faire croire à `client2` que votre hôte c'est `client1`. [Tout est là](https://sandilands.info/sgordon/arp-spoofing-on-wired-lan). 
 
 ---
 
