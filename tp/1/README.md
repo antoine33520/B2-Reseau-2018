@@ -52,9 +52,19 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
 
 # Sommaire
 
-* [I. Exploration du réseau d'une machine CentOS]
-* [II. Communication simple entre deux machines]
-* [III. Routage statique simple]
+* [I. Exploration du réseau d'une machine CentOS](#i-exploration-du-réseau-dune-machine-centos)
+  * [1. Mise en place](#1-mise-en-place)
+  * [2. Basics](#2-basics)
+    * [Routes](#routes)
+    * [Table ARP](#table-arp)
+    * [Capture réseau](#capture-réseau)
+* [II. Communication simple entre deux machines](#ii-communication-simple-entre-deux-machines)
+  * [1. Mise en place](#1-mise-en-place-1)
+  * [2. Basics](#2-basics-1)
+    * [`ping` et ARP](#ping-et-arp)
+    * [`netcat` : TCP et UDP](#netcat)
+* [III. Routage statique simple](#iii-routage-statique-simple)
+
 
 ---
 
@@ -280,6 +290,14 @@ Vous devriez avoir un chat simpliste entre les deux machines. Pendant que la con
   * récupérez sur l'hôte et analysez dans Wireshark
     * hint : raisonnez par comparaison avec les captures précédentes de `ping`
 
+
+## 3. Bonus : ARP spoofing
+
+> **Jetez au moins un oeil pour la curiosité.** 
+
+C'est assez facile de faire de l'ARP spoofing (ou ARP cache poisoning) avec une ligne de commande sous la main. C'est un man-in-the-middle qu'on peut réaliser en une commande. Vous pouvez utiliser `arping` pour ça.  
+
+Le but ? Usurpation d'identité sur un réseau local. Essayer de faire croire à `client2` que votre hôte c'est `client1`. [Tout est là](https://sandilands.info/sgordon/arp-spoofing-on-wired-lan). 
 
 #### UDP
 
