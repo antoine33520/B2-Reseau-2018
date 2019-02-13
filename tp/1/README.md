@@ -54,6 +54,7 @@ Premier TP un peu tranquille pour se remettre dans le bain. Au programme :
 
 * [I. Exploration du réseau d'une machine CentOS]
 * [II. Communication simple entre deux machines]
+* [III. Routage statique simple]
 
 ---
 
@@ -192,6 +193,7 @@ Let's go :
       * 4 ping
       * 4 pong
 * récupérer le fichier `ping.pcap` sur l'hôte
+  * si vous savez pas comment, faites signe
 * explorer la capture dans Wireshark
   * **ce sont des messages très simples, il n'y a que 10 trames, essayez de vraiment tout comprendre**
 
@@ -219,6 +221,8 @@ Si on résume :
 
 # II. Communication simple entre deux machines
 
+## 1. Mise en place
+
 Machine | `net1` | `net2`
 --- | --- | ---
 PC | `10.1.1.1` | `10.1.2.1`
@@ -228,6 +232,94 @@ PC | `10.1.1.1` | `10.1.2.1`
 Clonez une deuxième fois le patron pour avoir un deuxième VM. 
 * réseau
   * 1 carte NAT
-  * 1 carte host-only dans `net1`
+  * 1 carte host-only dans `net1`  
 
-Répéter les opérations de configurations pour cette deuxième VM
+[Répéter les opérations de configurations](#allumage-et-configuration-de-la-vm) pour cette deuxième VM. 
+* n'oubliez pas de mettre à jour le fichier `hosts` de la première VM
+
+## 2. Basics
+
+### `ping` et ARP
+
+* vider les tables ARP des deux machines
+* depuis `client1` :
+  * `ping -c 4 client2`
+* observer le changement dans les tables ARP 
+* refaire l'opération en faisant une capture réseau `ping-2.pcap`
+  * attention encore à choisir une interface où il n'y a pas de trafic SSH
+
+* récupérer `ping-2.pcap` sur l'hôte et l'analyser dans Wireshark
+
+### `netcat`
+[`netcat` ou `nc`](../../cours/lexique.md#nc-ou-netcat) est un outil très simple de fonctionnement et d'utilisation qui permet d'écouter sur un [port](../../cours/lexique.md#ports), ou de se connecter sur un [port](../../cours/lexique.md#ports) distant. On va l'utiliser pour voir un peu comment fonctionnent des connexions TCP et UDP simples.
+
+Afin de permettre à `netcat` d'écouter sur un port, il faudra l'ouvrir dans le firewall. Le firewall de CentOS n'accepte presque rien par défaut.  
+
+#### UDP
+
+Sur `client1`
+* [ouvrir le port UDP 8888](../../cours/procedures.md#interagir-avec-le-firewall)
+* lancer `netcat` pour qu'il écoute sur le port UDP 8888
+  * `nc -u -l 8888`
+    * `-u` pour UDP
+    * `-l` pour "listen" 
+    * `8888` pour le port choisi
+Sur `client2`
+* se connecter au port 8888 UDP du `client1`
+  * `nc -u <IP_CLIENT1> 8888`
+
+Vous devriez avoir un chat simpliste entre les deux machines. Pendant que la connexion est établie : 
+* ouvrez un deuxième shell sur chacune des machines
+* utilisez [la commande `ss`](../../cours/lexique.md#netstat-ou-ss) sur les deux machines pour voir la connexion établie
+  * `ss -unp` fera l'affaire
+    * `-u` pour voir les connexions UDP uniquement
+    * `-n` pour avoir le numéro des ports plutôt que leurs noms 
+    * `-p` pour voir le processus qui tourne derrière
+* utilisez [`tcpdump`](../../cours/lexique.md#tcpdump) pour capturer quelques messages
+  * capture `nc-udp.pcap`
+  * récupérez sur l'hôte et analysez dans Wireshark
+    * hint : raisonnez par comparaison avec les captures précédentes de `ping`
+
+
+#### UDP
+
+Sur `client1`
+* [ouvrir le port TCP 8888](../../cours/procedures.md#interagir-avec-le-firewall)
+* lancer `netcat` pour qu'il écoute sur le port UDP 8888
+  * `nc -l 8888` (TCP c'est par défaut avec `netcat`)
+    * `-l` pour "listen" 
+    * `8888` pour le port choisi
+Sur `client2`
+* se connecter au port 8888 UDP du `client1`
+  * `nc <IP_CLIENT1> 8888`
+
+Vous devriez avoir un chat simpliste entre les deux machines. Pendant que la connexion est établie : 
+* ouvrez un deuxième shell sur chacune des machines
+* utilisez [la commande `ss`](../../cours/lexique.md#netstat-ou-ss) sur les deux machines pour voir la connexion établie
+  * `ss -tnp` fera l'affaire
+    * `-t` pour voir les connexions TCP uniquement
+    * `-n` pour avoir le numéro des ports plutôt que leurs noms 
+    * `-p` pour voir le processus qui tourne derrière
+* utilisez [`tcpdump`](../../cours/lexique.md#tcpdump) pour capturer quelques messages
+  * lancer la capture AVANT l'établissement du `netcat`
+  * couper la capture APRES avoir couper le `netcat`
+  * capture `nc-tcp.pcap`
+  * récupérez sur l'hôte et analysez dans Wireshark
+    * hint : raisonnez par comparaison avec la capture précédente de `nc-udp.pcap`
+    * hint2 : vous devriez voir le "3-way handshake TCP"
+
+---
+
+# III. Routage statique simple
+
+Dans cette partie on va transformer notre `client1` en routeur. Le but sera de permettre à `client2` d'accéder à `net2`.
+
+Sur `client1` :
+* "transformer la machine en routeur" = activer l'IPv4 forwarding
+  * `sysctl -w net.ipv4.ip_forward=1`
+
+Sur `client2` :
+* [ajouter une route statique vers `net2`](./cours/procedures.md#ajouter-une-route-statique)
+* `ping 10.1.2.1` pour tester (ip de l'hôte dans `net2`)
+* `traceroute 10.1.2.1` pour voir le chemin parcouru par vos paquets
+
