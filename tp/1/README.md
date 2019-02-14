@@ -330,6 +330,15 @@ Vous devriez avoir un chat simpliste entre les deux machines. Pendant que la con
 
 ---
 
+#### Firewall
+
+* fermer l'un des deux ports 8888 (TCP ou UDP)
+* retenter la connexion (qui ne marche pas du coup) avec `netcat`
+* utiliser `tcpdump` et Wireshark pour voir la réponse exacte du firewall sur le réseau
+  * capture `firewall.pcap`
+
+---
+
 ## 3. Bonus : ARP spoofing
 
 > **Jetez au moins un oeil pour la curiosité.** 
