@@ -146,6 +146,9 @@ Les opérations sont à réaliser sur la VM sauf si le contraire est expliciteme
 
 ### Routes
 
+* **AVANT TOUT, SUPPRIMER LA ROUTE PAR DEFAUT** qui correspond à la NAT et dont nous avons pas besoin pour le moment
+  * *Pourquoi ? Parce que la NAT vous permet de joindre tous les host-only... Et qu'on en veut pas !*
+
 * afficher [les routes](../../cours/1.md#table-de-routage) que connaît votre machine
   * `ip route show`
   * expliquer chacune des lignes
@@ -153,7 +156,6 @@ Les opérations sont à réaliser sur la VM sauf si le contraire est expliciteme
 * supprimer une [route](../../cours/1.md#table-de-routage)
   * `sudo ip route del <NETWORK_ADDRESS>`
   * tester qu'elle ne fonctionne plus = tester qu'on ne peut plus utiliser le réseau concerné
-  * **NB** : suivant l'OS de votre hôte, il sera aussi nécessaire de supprimer la route par défaut de la VM pour tester ça (qui utilise la carte NAT)
 
 * remettre la [route](cours/1.md#table-de-routage)
   * [il y a une procédure dans le cours pour faire ça](../../cours/procedures.md#ajouter-une-route-statique)
