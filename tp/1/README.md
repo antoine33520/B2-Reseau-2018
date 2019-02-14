@@ -206,7 +206,7 @@ Let's go :
     * envoyer 4 `ping`
       * `ping -c 4 <HOST_IP>`
   * **1** : CTRL + C
-    * vous devrez avoir capturé 10 paquets
+    * vous devrez avoir capturé 10 paquets (ou 8, ou 12. M'enfin 8, il manquera un truc)
       * 2 pour l'échange ARP
       * 4 ping
       * 4 pong
