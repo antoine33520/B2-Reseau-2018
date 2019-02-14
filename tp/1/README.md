@@ -124,7 +124,7 @@ Idem pour les noms de domaines.
   * avec toutes ses IPs
   * et les IPs de l'hôte
 
-[ ] s'assurer que les 3 cartes réseaux fonctionnent :
+* [ ] s'assurer que les 3 cartes réseaux fonctionnent :
   * NAT : le `ping` est bloqué en sortie à YNOV. Donc : 
     * `curl google.com` si vous êtes à YNOV
     * expliquer le retour que vous obtenez (code retour HTTP `301`)
