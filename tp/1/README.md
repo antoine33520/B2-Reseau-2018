@@ -76,12 +76,16 @@ Vous n'aurez besoin que d'**une seule VM pour cette première partie** (clonez l
 
 ## 1. Mise en place
 
+### Intro
+
+**Rien à faire dans la partie Intro**.  
+
 Dans cete partie, on va mettre en place une unique VM, qui sera dans deux réseaux : 
 
 Machine | `net1` | `net2`
 --- | --- | ---
-PC | `10.1.1.1` | `10.1.2.1`
-VM (`client1.tp1.b2`) | `10.1.1.2` | `10.1.2.2`
+PC | `10.1.1.1/24` | `10.1.2.1/30`
+VM (`client1.tp1.b2`) | `10.1.1.2/24` | `10.1.2.2/30`
 
 Je ferai en sorte que les IPs choisies pour les TPs soient consistantes. Par exemple, ici, pour `10.1.2.1` :
 * `10` : plage d'adresses privées, ce sera toujours `10` au début
