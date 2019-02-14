@@ -146,15 +146,15 @@ Les opérations sont à réaliser sur la VM sauf si le contraire est expliciteme
 
 ### Routes
 
-* **AVANT TOUT, SUPPRIMER LA ROUTE PAR DEFAUT** qui correspond à la NAT et dont nous avons pas besoin pour le moment
+* **AVANT TOUT, [SUPPRIMER LA ROUTE PAR DEFAUT](../../cours/1.md#table-de-routage)** qui correspond à la NAT et dont nous avons pas besoin pour le moment
   * *Pourquoi ? Parce que la NAT vous permet de joindre tous les host-only... Et qu'on en veut pas !*
 
 * afficher [les routes](../../cours/1.md#table-de-routage) que connaît votre machine
-  * `ip route show`
+  * [`ip route show`](../../cours/1.md#table-de-routage)
   * expliquer chacune des lignes
 
 * supprimer une [route](../../cours/1.md#table-de-routage)
-  * `sudo ip route del <NETWORK_ADDRESS>`
+  * [`sudo ip route del <NETWORK_ADDRESS>`](../../cours/1.md#table-de-routage)
   * tester qu'elle ne fonctionne plus = tester qu'on ne peut plus utiliser le réseau concerné
 
 * remettre la [route](cours/1.md#table-de-routage)
