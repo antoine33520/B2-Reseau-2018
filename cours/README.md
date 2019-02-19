@@ -29,7 +29,7 @@
   * [DHCP](./lexique.md#dhcp--dynamic-host-configuration-protocol)
   * NAT
   * [firewall](./lexique.md#pare-feu-ou-firewall)
-  
+
 * savoir gérer le réseau d'une distrib Linux orienté serveur
   * [CentOS 7](https://www.centos.org/)
   * gestion de [stack réseau](./lexique.md#stack-réseau-ou-stack-tcpip-ou-pile-réseau)
@@ -64,6 +64,10 @@
 
 * connaissances techniques en réseau
   * modèle OSI et principaux protocoles
+    * PDU ("trames", "paquets", "datagramme")
   * Internet
-  * design infra réseau
+  * design réseau
+    * + adressage IP
   * sécurité
+  * fonctionnement du routage/encapsulation
+  
