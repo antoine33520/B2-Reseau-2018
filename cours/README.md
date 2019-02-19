@@ -38,11 +38,32 @@
   
 * travailler avec des outils du monde Cisco
   * [routage](./lexique.md#routage-ou-routing) statique et dynamique
+    * OSPF, EIGRP
+    * NAT
+    * LACP
+    * ACL
   * switching
+    * VLAN
   * sécurité
   * appréhension de la première certification ([CCNA](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna-routing-switching.html))
-  
+
+* utilisation de OpenVSwitch
+  * alternative libre/opensource aux constructeurs comme Cisco, Juniper, HP, etc.
+  * gestion L2 (switching) et L3 (routing)
+  * intégration native à beaucoup d'autres outils ouverts et standards
+    * Kubernetes
+    * Métrologie/Monitoring
+    * Backup
+    * etc.
+  * sécurité
+
+* approfondissement accès WAN
+  * NAT or not NAT ? 
+  * front firewall
+  * backbone
+
 * connaissances techniques en réseau
   * modèle OSI et principaux protocoles
   * Internet
   * design infra réseau
+  * sécurité
