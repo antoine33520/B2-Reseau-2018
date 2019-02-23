@@ -20,5 +20,5 @@ macron
 ```
 * je vous conseille les copier/coller plutôt que les screens (quand il s'agit de la ligne de commande), c'est bien moins moche, `le markdown possède des balises prévues à cet effet` m'voyez. 
 * pour me faire parvenir le rendu, vous m'envoyez un MP sur Discord, le message doit être formatté comme suit : 
-  * `nom:url`
-  * par exemple `dupont:https://github.com/dupont/b2-net-tp2` 
+  * `nom,url`
+  * par exemple `dupont,https://github.com/dupont/b2-net-tp2` 
