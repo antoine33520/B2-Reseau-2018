@@ -1,6 +1,7 @@
 # TPs
 
 * [TP1 : Remise dans le bain](./1)
+* [TP2 : Routage statique et services d'infra](./2)
 
 # Rendu de TP
 

@@ -17,7 +17,7 @@
     * configuration [firewall](../../cours/lexique.md#pare-feu-ou-firewall)
   * utilisation de [`tcpdump`](../../cours.lexique.md#tcpdump)
 
-# TP 2 - Routage statique et quelques services d'infra 
+# TP 2 - Routage statique et services d'infra 
 
 Deuxième TP : on va remettre en place du routage statique avec des VMs et quelques services réseau très utiles dans n'importe quelle infra. Encore des choses qu'on a vu l'an dernier, mais ça va nous servir pour construire des choses plus complexes.  
 
