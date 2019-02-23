@@ -291,7 +291,7 @@ On va s'en servir pour que de nouveaux clients puissent récupérer une IP et l'
 Pour faire ça, on va recycler `client1` :
 * renommer `client1.net1.tp2` en `dhcp-server.net1.tp2`
 * puis : `sudo yum install -y dhcp`
-* récupérer le fichier d'exemple
+* récupérer [le fichier d'exemple de configuration dhcpd](./dhcp/dhcpd.conf)
   * **comprendre le fichier**
   * il est très minimaliste, c'est à la portée de tous
   * le mettre dans `/etc/dhcp/dhcpd.conf`
