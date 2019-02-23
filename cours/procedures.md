@@ -47,6 +47,12 @@ sudo ifdown <INTERFACE_NAME>
 sudo ifup <INTERFACE_NAME>
 ```
 
+**4. (optionnel) Définir une zone firewall**
+Dans le fichier de configuration `/etc/sysconfig/network-scripts/ifcfg-<INTERFACE_NAME>`, ajouter :
+```
+ZONE=internal
+```
+
 ---
 
 ### Définir une IP dynamique (DHCP)
