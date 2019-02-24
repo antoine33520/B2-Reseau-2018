@@ -308,6 +308,44 @@ Pour tester :
 
 ## 3. NTP server
 
+### Présentation
+
+NTP (pour *Network Time Protocol*) est le protocole (= la langue) que l'on utilise pour permettr eà plusieurs serveurs d'être synchronisés au niveau de la date et de l'heure. Le problème est loin d'être trivial lorsque l'on s'y intéresse de près.  
+
+Il existe des [serveurs NTP publics](https://www.pool.ntp.org), sur lesquels n'importe qui peut se synchroniser. Ils servent souvent de référence.  
+
+Dans notre cas :
+* on va demander à `router1` de se synchroniser sur un serveur externe
+* et on va demander à toutes les autres machines de se synchroniser sur `router1`
+
+Dernier détail : sur CentOS, le service qui gère NTP s'appelle `chrony` :
+* le démon systemd s'appelle `chronyd`
+  * donc `sudo systemctl start chronyd` par exemple
+* la commande pour avoir des infos est `chronyc`
+  * `chronyc sources` pour voir les serveurs pris en compte par `cronyd`
+  * `chronyc tracking` pour voir l'état de la synchronisation
+* la configuration se trouve dans `/etc/chrony.conf`
+* présent par défaut sur CentOS
+
+### Mise en place
+
+Sur `router1` : 
+* éditer le fichier `/etc/chrony.conf`
+  * [un contenu modèle se trouve ici](./chrony/serveur/chrony.conf)
+  * choisissez le pool de serveurs français sur [le site des serveurs externes de référence](https://www.pool.ntp.org) et ajoutez le à la configuration
+* démarrer le service `chronyd`
+  * `sudo systemctl start chronyd`
+* vérifier l'état de la synchronisation NTP
+  * `chronyc sources`
+  * `chronyc tracking`
+
+Sur toutes les autres machines : 
+* éditer le fichier `/etc/chrony.conf`
+  * [un contenu modèle se trouve ici](./chrony/client/chrony.conf)
+* démarrer le service `chronyd`
+  * `sudo systemctl start chronyd`
+* vérifier l'état de la synchronisation NTP
+
 ## 4. Web server
 
 Le serveur web tournera sur la machine `server1.net2.tp2`. **Ce sera notre "service d'infra".** Dans une vraie infra, on peut trouver tout un tas de services utiles à l'infra en interne :
