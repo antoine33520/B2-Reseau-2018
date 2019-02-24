@@ -268,7 +268,6 @@ Pour ce faire, on va utiliser les *zones* du Firewall CentOS.
 * il faut redémarrer les interfaces avec `ifdown` puis `ifup` pour que le changement prenne effet
 
 Activer le NAT (ou *masquerading*) dans la zone `public`
-* `sudo firewall-cmd --add-masquerade --zone=external --permanent`
 * `sudo firewall-cmd --add-masquerade --zone=public --permanent`
 * reload le firewall
 
