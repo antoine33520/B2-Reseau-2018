@@ -269,7 +269,7 @@ Pour ce faire, on va utiliser les *zones* du Firewall CentOS.
 
 Activer le NAT (ou *masquerading*) dans la zone `public`
 * `sudo firewall-cmd --add-masquerade --zone=public --permanent`
-* reload le firewall
+* reload le firewall (vous connaissez la commande !)
 
 Ajouter une route aux autres machines pour qu'elles récup un accès Internet
 * d'abord sur `router2` pour tester
