@@ -91,7 +91,7 @@ Au menu :
   * `router2.net12.b2`
     * **SANS** carte NAT
 
-* tableau d'adressage IP
+### Tableau d'adressage IP
 
 Machine | `net1` | `net2` | `net12`
 --- | --- | --- | ---
@@ -101,7 +101,7 @@ PC | `10.2.1.1/24` | `10.2.2.1/24` | `10.2.12.1/29`
 `router1.tp2.b2` | `10.2.1.254/24` | X | `10.2.12.2/29`
 `router2.tp2.b2` | X | `10.2.2.254/24` | `10.2.12.3/29`
 
-* **schéma moche**
+### Schéma moche
 
 ```
         router1.net12.tp2                   router2.net12.tp2
@@ -123,7 +123,7 @@ PC | `10.2.1.1/24` | `10.2.2.1/24` | `10.2.12.1/29`
         client1.net1.tp2                   server1.net2.tp2
 ```
 
-* checklist IP VMs 
+### Checklist IP VMs 
 
 On parle de toutes les VMs :
 * [X] Désactiver SELinux
@@ -137,6 +137,8 @@ On parle de toutes les VMs :
   * une fois fait, vous avez vos trois fenêtres SSH ouvertes, une dans chaque machine
 * [ ] [Définition du nom de domaine](../../cours/procedures.md#changer-son-nom-de-domaine)
 * [ ] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
+
+---
 
 ## 2. Routage statique
 
@@ -166,6 +168,8 @@ Une fois en place :
     * pourtant leurs messages passent bien par `net12`
     * :fire:
 
+---
+
 ## 3. Visualisation du routage avec Wireshark
 
 > Pour rappel, lorsque vous utilisez Wireshark, évitez de faire du SSH sur l'interface où vous capturez le trafic, ça évitera la pollution dans vos captures.
@@ -184,6 +188,8 @@ But :
 > Les captures devraient être très simples : uniquement les ping/pong et éventuellement un peu d'ARP
 
 > Les deux captures doivent figurer dans le rendu
+
+---
 
 # II. NAT et services d'infra
 
@@ -279,6 +285,8 @@ Ajouter une route aux autres machines pour qu'elles récup un accès Internet
 * ensuite idem sur `client1`
 * vérifier que `server1` n'a pas accès à internet
 
+---
+
 ## 2. DHCP server
 
 Un serveur DHCP, ça permet de :
@@ -305,6 +313,8 @@ Pour tester :
   * utiliser [`dhclient`](../../cours/lexique.md#dhclient-linux-only)
 * dans un cas comme dans l'autre, vous devriez récupérer une IP dans la plage d'IP définie dans `dhcpd.conf`
   * et une route par défaut  
+
+---
 
 ## 3. NTP server
 
@@ -349,6 +359,8 @@ Sur toutes les autres machines :
 * démarrer le service `chronyd`
   * `sudo systemctl start chronyd`
 * vérifier l'état de la synchronisation NTP
+
+---
 
 ## 4. Web server
 
