@@ -232,7 +232,7 @@ Dans le cadre du TP :
                     |
                     |
            10.0.2.15|
-          (external)|                          router2.net12.tp2
+            (public)|                          router2.net12.tp2
                  +--+--+(internal)                   +-----+
 router1.net12.tp2|     |10.2.12.2/29     10.2.12.3/29|     |
                  |     +-----------------------------+     |
@@ -258,7 +258,7 @@ S'assurer que la VM `router1` peut joindre internet :
 * ou un [`curl`](../../cours/lexique.md#curl-et-wget) si vous êtes à YNOV
 
 Pour ce faire, on va utiliser les *zones* du Firewall CentOS. 
-* mettre l'interface NAT dans la zone `external`
+* mettre l'interface NAT dans la zone `public`
   * dans le fichier de config de l'interface, ajouter `ZONE=external`
 * mettre l'interface de `net1` dans la zone `internal`
   * dans le fichier de config de l'interface, ajouter `ZONE=internal`
@@ -266,8 +266,7 @@ Pour ce faire, on va utiliser les *zones* du Firewall CentOS.
   * dans le fichier de config de l'interface, ajouter `ZONE=public`
 * il faut redémarrer les interfaces avec `ifdown` puis `ifup` pour que le changement prenne effet
 
-Activer le NAT (ou *masquerading*) dans les zones `public` et `external`
-* `sudo firewall-cmd --add-masquerade --zone=external --permanent`
+Activer le NAT (ou *masquerading*) dans la zone `public`
 * `sudo firewall-cmd --add-masquerade --zone=public --permanent`
 * reload le firewall
 
