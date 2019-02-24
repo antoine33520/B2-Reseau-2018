@@ -136,6 +136,7 @@ On parle de toutes les VMs :
 * [ ] La connexion SSH doit être fonctionnelle
   * une fois fait, vous avez vos trois fenêtres SSH ouvertes, une dans chaque machine
 * [ ] [Définition du nom de domaine](../../cours/procedures.md#changer-son-nom-de-domaine)
+* [ ] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
 
 ## 2. Routage statique
 
@@ -232,7 +233,7 @@ Dans le cadre du TP :
                     |
                     |
            10.0.2.15|
-          (external)|                          router2.net12.tp2
+            (public)|                          router2.net12.tp2
                  +--+--+(internal)                   +-----+
 router1.net12.tp2|     |10.2.12.2/29     10.2.12.3/29|     |
                  |     +-----------------------------+     |
@@ -258,15 +259,15 @@ S'assurer que la VM `router1` peut joindre internet :
 * ou un [`curl`](../../cours/lexique.md#curl-et-wget) si vous êtes à YNOV
 
 Pour ce faire, on va utiliser les *zones* du Firewall CentOS. 
-* mettre l'interface NAT dans la zone `external`
-  * dans le fichier de config de l'interface, ajouter `ZONE=external`
-* mettre l'interface de `net1` dans la zone `internal`
-  * dans le fichier de config de l'interface, ajouter `ZONE=internal`
-* mettre l'interface de `net12` dans la zone `public`
+* mettre l'interface NAT dans la zone `public`
   * dans le fichier de config de l'interface, ajouter `ZONE=public`
+* mettre l'interface de `net1` dans la zone `public`
+  * dans le fichier de config de l'interface, ajouter `ZONE=public`
+* mettre l'interface de `net12` dans la zone `internal`
+  * dans le fichier de config de l'interface, ajouter `ZONE=internal`
 * il faut redémarrer les interfaces avec `ifdown` puis `ifup` pour que le changement prenne effet
 
-Activer le NAT (ou *masquerading*) dans les zones `public` et `external`
+Activer le NAT (ou *masquerading*) dans la zone `public`
 * `sudo firewall-cmd --add-masquerade --zone=external --permanent`
 * `sudo firewall-cmd --add-masquerade --zone=public --permanent`
 * reload le firewall
@@ -320,7 +321,7 @@ Dans notre cas :
 
 Dernier détail : sur CentOS, le service qui gère NTP s'appelle `chrony` :
 * le démon systemd s'appelle `chronyd`
-  * donc `sudo systemctl start chronyd` par exemple
+  * donc `sudo systemctl restart chronyd` par exemple
 * la commande pour avoir des infos est `chronyc`
   * `chronyc sources` pour voir les serveurs pris en compte par `cronyd`
   * `chronyc tracking` pour voir l'état de la synchronisation
@@ -333,6 +334,8 @@ Sur `router1` :
 * éditer le fichier `/etc/chrony.conf`
   * [un contenu modèle se trouve ici](./chrony/serveur/chrony.conf)
   * choisissez le pool de serveurs français sur [le site des serveurs externes de référence](https://www.pool.ntp.org) et ajoutez le à la configuration
+* [ouvrir le port utilisé par NTP](../../cours/procedures.md#interagir-avec-le-firewall)
+  * c'est le port 123/UDP
 * démarrer le service `chronyd`
   * `sudo systemctl start chronyd`
 * vérifier l'état de la synchronisation NTP
@@ -342,6 +345,8 @@ Sur `router1` :
 Sur toutes les autres machines : 
 * éditer le fichier `/etc/chrony.conf`
   * [un contenu modèle se trouve ici](./chrony/client/chrony.conf)
+* [ouvrir le port utilisé par NTP](../../cours/procedures.md#interagir-avec-le-firewall)
+  * c'est le port 123/UDP
 * démarrer le service `chronyd`
   * `sudo systemctl start chronyd`
 * vérifier l'état de la synchronisation NTP
