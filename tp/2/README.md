@@ -142,12 +142,13 @@ On parle de toutes les VMs :
 
 ## 2. Routage statique
 
-Vous allez ajouter des routes statiques sur les machines agissant comme [routeurs]../../cours/lexique.md#routeur), mais aussi sur les clients. 
+Vous allez ajouter des routes statiques sur les machines agissant comme [routeurs](../../cours/lexique.md#routeur), mais aussi sur les clients. 
 
 Avant tout, sur `router1` et `router2`, activez l'IPv4 forwarding qui permettra à votre VM de traiter des paquets IP qui ne lui sont pas destinés. En d'autres termes **vous transformez votre machine en routeur**. GG. :fire:  
 
 * activation de l'IPv4 Forwarding
   * `sudo sysctl -w net.ipv4.conf.all.forwarding=1`
+  * **pour que ce soit permanent** : écrivez la règle `net.ipv4.conf.all.forwarding=1` dans le fichier `/etc/sysctl.conf`
 
 Pour ajouter des routes statiques, vous pouvez vous référer à [la section dédiée dans page de procédures CentOS 7](../../cours/procedures.md#ajouter-une-route-statique).
 
