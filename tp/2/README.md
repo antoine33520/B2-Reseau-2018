@@ -174,16 +174,16 @@ Une fois en place :
 
 > Pour rappel, lorsque vous utilisez Wireshark, évitez de faire du SSH sur l'interface où vous capturez le trafic, ça évitera la pollution dans vos captures.
 
-Vos captures captureront un `ping` entre `router1` et `server1`. **Le `ping` devra donc passer par `router2`.**
+Vos captures captureront un `ping` entre `client1` et `server1`. **Le `ping` devra donc passer par `router1` et `router2`.**
 
 But : 
-* depuis `router1`
+* depuis `client1`
   * `ping server1`
 * capturer le trafic qui passe sur `router2`
   * en utilisant `tcpdump`
   * une capture pour l'interface qui est dans `net12`
   * une autre capture pour l'interface qui est dans `net2`
-  * expliquer la différence
+  * **expliquer la différence**
 
 > Les captures devraient être très simples : uniquement les ping/pong et éventuellement un peu d'ARP
 
