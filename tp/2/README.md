@@ -134,7 +134,7 @@ On parle de toutes les VMs :
   * déja fait dans le patron
 * [ ] [Définition des IPs statiques](../../cours/procedures.md#définir-une-ip-statique)
 * [ ] La connexion SSH doit être fonctionnelle
-  * une fois fait, vous avez vos trois fenêtres SSH ouvertes, une dans chaque machine
+  * une fois fait, vous avez vos quatre fenêtres SSH ouvertes, une dans chaque machine
 * [ ] [Définition du nom de domaine](../../cours/procedures.md#changer-son-nom-de-domaine)
 * [ ] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
 
