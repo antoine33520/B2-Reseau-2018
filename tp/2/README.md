@@ -185,7 +185,7 @@ But :
 * depuis `client1`
   * `ping server1`
 * capturer le trafic qui passe sur `router2`
-  * en utilisant `tcpdump`
+  * en utilisant [`tcpdump`](../../cours/lexique.md#tcpdump)
   * une capture pour l'interface qui est dans `net12`
   * une autre capture pour l'interface qui est dans `net2`
   * **expliquer la différence**
