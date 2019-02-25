@@ -169,8 +169,9 @@ Une fois en place :
   * :fire:
 * depuis `router1`
   * `ping server1`
-  * **ça ne marche pas, expliquer pourquoi**
-  
+  * **ça ne fonctionne pas, expliquer pourquoi**
+  * (oui c'est le même principe pour le ping de `router2` vers `client1` qui ne fonctionne pas non plus)
+
 ---
 
 ## 3. Visualisation du routage avec Wireshark
