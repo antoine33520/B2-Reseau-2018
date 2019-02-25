@@ -104,7 +104,7 @@ PC | `10.2.1.1/24` | `10.2.2.1/24` | `10.2.12.1/29`
 ### Schéma moche
 
 ```
-        router1.net12.tp2                   router2.net12.tp2
+        router1.net12.b2                   router2.net12.b2
             +-----+                             +-----+
             |     |10.2.12.2/29     10.2.12.3/29|     |
             |     +-----------------------------+     |
@@ -120,7 +120,7 @@ PC | `10.2.1.1/24` | `10.2.2.1/24` | `10.2.12.1/29`
             |     |                             |     |
             |     |                             |     |
             +-----+                             +-----+
-        client1.net1.tp2                   server1.net2.tp2
+        client1.net1.b2                   server1.net2.b2
 ```
 
 ### Checklist IP VMs 
@@ -239,9 +239,9 @@ Dans le cadre du TP :
                     |
                     |
            10.0.2.15|
-            (public)|                          router2.net12.tp2
+            (public)|                          router2.net12.b2
                  +--+--+(internal)                   +-----+
-router1.net12.tp2|     |10.2.12.2/29     10.2.12.3/29|     |
+router1.net12.b2|     |10.2.12.2/29     10.2.12.3/29|     |
                  |     +-----------------------------+     |
                  +-----+                             +-----+
        10.2.1.254/24|                                   |10.2.2.254/24
@@ -255,7 +255,7 @@ router1.net12.tp2|     |10.2.12.2/29     10.2.12.3/29|     |
                  |     |                             |     |
                  |     |                             |     |
                  +-----+                             +-----+
-             client1.net1.tp2                   server1.net2.tp2
+             client1.net1.b2                   server1.net2.b2
 ```
 
 ### Mise en place
@@ -297,7 +297,7 @@ Un serveur DHCP, ça permet de :
 On va s'en servir pour que de nouveaux clients puissent récupérer une IP et l'adresse de la passerelle directement dans `net1` (réseau clients).  
 
 Pour faire ça, on va recycler `client1` :
-* renommer `client1.net1.tp2` en `dhcp-server.net1.tp2`
+* renommer `client1.net1.b2` en `dhcp-server.net1.b2`
 * puis : `sudo yum install -y dhcp`
 * récupérer [le fichier d'exemple de configuration dhcpd](./dhcp/dhcpd.conf)
   * **comprendre le fichier**
@@ -308,7 +308,7 @@ Pour faire ça, on va recycler `client1` :
   * appelez-moi en cas de pb
 
 Pour tester : 
-* clonez une nouvelle fois votre VM patron, ce sera notre `client2.tp2.b1`
+* clonez une nouvelle fois votre VM patron, ce sera notre `client2.net2.b1`
   * [configurer l'interface en DHCP, en dynamique (pas en statique)](../../cours/procedures.md#définir-une-ip-dynamique-dhcp)
   * utiliser [`dhclient`](../../cours/lexique.md#dhclient-linux-only)
 * dans un cas comme dans l'autre, vous devriez récupérer une IP dans la plage d'IP définie dans `dhcpd.conf`
@@ -364,7 +364,7 @@ Sur toutes les autres machines :
 
 ## 4. Web server
 
-Le serveur web tournera sur la machine `server1.net2.tp2`. **Ce sera notre "service d'infra".** Dans une vraie infra, on peut trouver tout un tas de services utiles à l'infra en interne :
+Le serveur web tournera sur la machine `server1.net2.b2`. **Ce sera notre "service d'infra".** Dans une vraie infra, on peut trouver tout un tas de services utiles à l'infra en interne :
 * dépôts git pour les dévs
 * partage de fichiers
 * serveur mail
