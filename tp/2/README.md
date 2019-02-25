@@ -163,11 +163,14 @@ Pour ajouter des routes statiques, vous pouvez vous référer à [la section dé
   * ajouter une route vers `net1`
 
 Une fois en place :
-  * `client1` et `server1` peuvent se `ping`
-    * alors qu'ils ne connaissent pas l'adresse de `net12`
-    * pourtant leurs messages passent bien par `net12`
-    * :fire:
-
+* `client1` et `server1` peuvent se `ping`
+  * alors qu'ils ne connaissent pas l'adresse de `net12`
+  * pourtant leurs messages passent bien par `net12`
+  * :fire:
+* depuis `router1`
+  * `ping server1`
+  * **ça ne marche pas, expliquer pourquoi**
+  
 ---
 
 ## 3. Visualisation du routage avec Wireshark
