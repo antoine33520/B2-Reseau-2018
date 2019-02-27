@@ -97,14 +97,14 @@ Machine | `net1` | `net2` | `net12`
 --- | --- | --- | ---
 PC | `10.2.1.1/24` | `10.2.2.1/24` | `10.2.12.1/29`
 `client1.net1.b2` | `10.2.1.10/24` | X | X
-`server1.tp2.b2` | X | `10.2.2.10/24` | X
-`router1.tp2.b2` | `10.2.1.254/24` | X | `10.2.12.2/29`
-`router2.tp2.b2` | X | `10.2.2.254/24` | `10.2.12.3/29`
+`server1.net2.b2` | X | `10.2.2.10/24` | X
+`router1.net12.b2` | `10.2.1.254/24` | X | `10.2.12.2/29`
+`router2.net12.b2` | X | `10.2.2.254/24` | `10.2.12.3/29`
 
 ### Schéma moche
 
 ```
-        router1.net12.tp2                   router2.net12.tp2
+        router1.net12.b2                   router2.net12.b2
             +-----+                             +-----+
             |     |10.2.12.2/29     10.2.12.3/29|     |
             |     +-----------------------------+     |
@@ -120,7 +120,7 @@ PC | `10.2.1.1/24` | `10.2.2.1/24` | `10.2.12.1/29`
             |     |                             |     |
             |     |                             |     |
             +-----+                             +-----+
-        client1.net1.tp2                   server1.net2.tp2
+        client1.net1.b2                   server1.net2.b2
 ```
 
 ### Checklist IP VMs 
@@ -134,7 +134,7 @@ On parle de toutes les VMs :
   * déja fait dans le patron
 * [ ] [Définition des IPs statiques](../../cours/procedures.md#définir-une-ip-statique)
 * [ ] La connexion SSH doit être fonctionnelle
-  * une fois fait, vous avez vos trois fenêtres SSH ouvertes, une dans chaque machine
+  * une fois fait, vous avez vos quatre fenêtres SSH ouvertes, une dans chaque machine
 * [ ] [Définition du nom de domaine](../../cours/procedures.md#changer-son-nom-de-domaine)
 * [ ] [Remplissage du fichier `/etc/hosts`](../../cours/procedures.md#editer-le-fichier-hosts)
 
@@ -142,12 +142,13 @@ On parle de toutes les VMs :
 
 ## 2. Routage statique
 
-Vous allez ajouter des routes statiques sur les machines agissant comme [routeurs]../../cours/lexique.md#routeur), mais aussi sur les clients. 
+Vous allez ajouter des routes statiques sur les machines agissant comme [routeurs](../../cours/lexique.md#routeur), mais aussi sur les clients. 
 
 Avant tout, sur `router1` et `router2`, activez l'IPv4 forwarding qui permettra à votre VM de traiter des paquets IP qui ne lui sont pas destinés. En d'autres termes **vous transformez votre machine en routeur**. GG. :fire:  
 
 * activation de l'IPv4 Forwarding
   * `sudo sysctl -w net.ipv4.conf.all.forwarding=1`
+  * **pour que ce soit permanent** : écrivez la règle `net.ipv4.conf.all.forwarding=1` dans le fichier `/etc/sysctl.conf`
 
 Pour ajouter des routes statiques, vous pouvez vous référer à [la section dédiée dans page de procédures CentOS 7](../../cours/procedures.md#ajouter-une-route-statique).
 
@@ -163,10 +164,14 @@ Pour ajouter des routes statiques, vous pouvez vous référer à [la section dé
   * ajouter une route vers `net1`
 
 Une fois en place :
-  * `client1` et `server1` peuvent se `ping`
-    * alors qu'ils ne connaissent pas l'adresse de `net12`
-    * pourtant leurs messages passent bien par `net12`
-    * :fire:
+* `client1` et `server1` peuvent se `ping`
+  * alors qu'ils ne connaissent pas l'adresse de `net12`
+  * pourtant leurs messages passent bien par `net12`
+  * :fire:
+* depuis `router1`
+  * `ping server1`
+  * **ça ne fonctionne pas, expliquer pourquoi**
+  * (oui c'est le même principe pour le ping de `router2` vers `client1` qui ne fonctionne pas non plus)
 
 ---
 
@@ -174,16 +179,16 @@ Une fois en place :
 
 > Pour rappel, lorsque vous utilisez Wireshark, évitez de faire du SSH sur l'interface où vous capturez le trafic, ça évitera la pollution dans vos captures.
 
-Vos captures captureront un `ping` entre `router1` et `server1`. **Le `ping` devra donc passer par `router2`.**
+Vos captures captureront un `ping` entre `client1` et `server1`. **Le `ping` devra donc passer par `router1` et `router2`.**
 
 But : 
-* depuis `router1`
+* depuis `client1`
   * `ping server1`
 * capturer le trafic qui passe sur `router2`
-  * en utilisant `tcpdump`
+  * en utilisant [`tcpdump`](../../cours/lexique.md#tcpdump)
   * une capture pour l'interface qui est dans `net12`
   * une autre capture pour l'interface qui est dans `net2`
-  * expliquer la différence
+  * **expliquer la différence**
 
 > Les captures devraient être très simples : uniquement les ping/pong et éventuellement un peu d'ARP
 
@@ -239,9 +244,9 @@ Dans le cadre du TP :
                     |
                     |
            10.0.2.15|
-            (public)|                          router2.net12.tp2
+            (public)|                          router2.net12.b2
                  +--+--+(internal)                   +-----+
-router1.net12.tp2|     |10.2.12.2/29     10.2.12.3/29|     |
+router1.net12.b2|     |10.2.12.2/29     10.2.12.3/29|     |
                  |     +-----------------------------+     |
                  +-----+                             +-----+
        10.2.1.254/24|                                   |10.2.2.254/24
@@ -255,7 +260,7 @@ router1.net12.tp2|     |10.2.12.2/29     10.2.12.3/29|     |
                  |     |                             |     |
                  |     |                             |     |
                  +-----+                             +-----+
-             client1.net1.tp2                   server1.net2.tp2
+             client1.net1.b2                   server1.net2.b2
 ```
 
 ### Mise en place
@@ -297,7 +302,7 @@ Un serveur DHCP, ça permet de :
 On va s'en servir pour que de nouveaux clients puissent récupérer une IP et l'adresse de la passerelle directement dans `net1` (réseau clients).  
 
 Pour faire ça, on va recycler `client1` :
-* renommer `client1.net1.tp2` en `dhcp-server.net1.tp2`
+* renommer `client1.net1.b2` en `dhcp-server.net1.b2`
 * puis : `sudo yum install -y dhcp`
 * récupérer [le fichier d'exemple de configuration dhcpd](./dhcp/dhcpd.conf)
   * **comprendre le fichier**
@@ -308,7 +313,7 @@ Pour faire ça, on va recycler `client1` :
   * appelez-moi en cas de pb
 
 Pour tester : 
-* clonez une nouvelle fois votre VM patron, ce sera notre `client2.tp2.b1`
+* clonez une nouvelle fois votre VM patron, ce sera notre `client2.net2.b1`
   * [configurer l'interface en DHCP, en dynamique (pas en statique)](../../cours/procedures.md#définir-une-ip-dynamique-dhcp)
   * utiliser [`dhclient`](../../cours/lexique.md#dhclient-linux-only)
 * dans un cas comme dans l'autre, vous devriez récupérer une IP dans la plage d'IP définie dans `dhcpd.conf`
@@ -364,7 +369,7 @@ Sur toutes les autres machines :
 
 ## 4. Web server
 
-Le serveur web tournera sur la machine `server1.net2.tp2`. **Ce sera notre "service d'infra".** Dans une vraie infra, on peut trouver tout un tas de services utiles à l'infra en interne :
+Le serveur web tournera sur la machine `server1.net2.b2`. **Ce sera notre "service d'infra".** Dans une vraie infra, on peut trouver tout un tas de services utiles à l'infra en interne :
 * dépôts git pour les dévs
 * partage de fichiers
 * serveur mail
