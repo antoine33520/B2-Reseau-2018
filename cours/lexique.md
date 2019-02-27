@@ -87,7 +87,12 @@
 
 #### *HTTP* : HyperText Transfer Protocol
 * protocole utilisé pour discuter avec des serveurs web
-
+* il fonctionne avec un principe de question réponse :
+  * le client utilise des verbes HTTP pour poser des questions
+    * `GET`, `POST`, `PUT`, etc
+  * le serveur répond avec un code retour et éventuellement un contenu 
+    * code retour : `200`, `404`, `301` etc.
+    * le contenu : data, images, html, js, css, etc.
 #### *SSH* : Secure SHell
 * protocole/outil utilisés pour se connecter à distance sur un équipement
 * on peut alors contrôler l'équipement en passant par le réseau
@@ -96,6 +101,7 @@
   * votre PC doit posséder un **client SSH** :
     * la commande `ssh` (simple, puissant, léger)
     * ou [Putty](https://www.putty.org/) (sur Windows, quand la commande `ssh` n'est pas dispo)
+* il est réputé pour être sécurisé, rapide et robuste
 
 ## Sigles/Acronymes
 
