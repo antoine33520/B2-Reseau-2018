@@ -43,6 +43,15 @@
 * il existe des plages réservées d'adresses IP
   * entre autres, les adresses "privées" et "publiques"
 
+#### *ICMP* : Internet Control Message Protocol v4
+* on parle ici d'ICMPv4
+* le protocole ICMP accompagne le [protocole IP](#ip--internet-protocol-v4) et permet la gestion de messages simples
+  * requêtes simples
+  * messages d'erreur
+  * diagnostic réseau
+* [la commande `ping`](#ping) repose entièrement sur ICMP
+  * certaines options de [la commande `traceroute`](#traceroute) aussi
+
 ---
 
 ### Couche 4 du modèle OSI
@@ -335,6 +344,7 @@ ip a
   * souvent, pour tester l'accès d'une machine à internet on fait `ping 8.8.8.8`
   * `8.8.8.8` est une adresse simple  mémoriser et correspond en réalité à un serveur de Google
   * `1.1.1.1` peut aussi être utilisé de la même façon, c'est un serveur de CloudFlare
+* repose sur le protocole ICMP
   
 ### `nmap`
 * outil de scan réseau
