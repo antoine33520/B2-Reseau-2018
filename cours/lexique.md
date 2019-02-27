@@ -344,7 +344,7 @@ ip a
   * souvent, pour tester l'accès d'une machine à internet on fait `ping 8.8.8.8`
   * `8.8.8.8` est une adresse simple  mémoriser et correspond en réalité à un serveur de Google
   * `1.1.1.1` peut aussi être utilisé de la même façon, c'est un serveur de CloudFlare
-* repose sur le protocole ICMP
+* repose sur [le protocole ICMP](#icmp--internet-control-message-protocol-v4)
   
 ### `nmap`
 * outil de scan réseau
