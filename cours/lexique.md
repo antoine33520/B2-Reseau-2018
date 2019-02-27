@@ -54,7 +54,8 @@
 * une fois le tunnel établi, le client et le serveur peuvent échanger des données
 * voyez TCP comme un échange de messages (comme des textos) **avec accusé de réception**
 * **on utilise TCP lorsqu'on veut une connexion stable, même si elle est un peu plus lente**
-* une connexion HTTP utilise un tunnel TCP par exemple
+* une connexion [HTTP](./lexique.md#http--hypertext-transfer-protocol) utilise un tunnel TCP par exemple
+* [le cours 2 est plus complet à ce sujet](./2.md#tcp)
 
 #### *UDP* : User Datagram Protocol
 
@@ -63,7 +64,7 @@
 * aucun tunnel n'est établi, les données sont envoyées **sans accusé de réception**
 * **on utilise UDP lorsqu'on s'en fiche de perdre certains messages sur la route, afin d'optimiser la vitesse de transport**
 * UDP est par exemple très utilisé dans les jeux en ligne (typiquement pour des FPS en ligne)
-
+* [le cours 2 est plus complet à ce sujet](./2.md#udp)
 ---
 
 ### Au dessus de 4 (couches "applicatives" qui transportent de la donnée)
