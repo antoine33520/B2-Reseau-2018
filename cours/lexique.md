@@ -110,13 +110,26 @@
 ### *LAN* : Local Area Network
 * réseau local
 * les équipements qui s'y trouvent portent des adresses privées
+* le [cours 2](./2.md#adressage-ip) est plus complet à ce sujet
 
 ### *MAC* : Media Access Control
 * on parle l'ici de *l'adresse MAC* ou *adresse physique*
 * elle est *obligatoirement* portée par une *carte réseau*
 * sur une carte physique, elle est gravée sur la carte (on ne peut pas la changer)
 * l'*adresse MAC* est composée de 12 caractères hexadécimaux (par exemple `D4-6D-7D-00-15-3F`)
-* les adresses MAC servent à envoyer des messages directs aux machines sur le même réseau que nous, elles sont utilisées par [le protocole Ethernet](#ethernet)
+* les *adresses MAC* servent à envoyer des messages directs aux machines sur le même réseau que nous, elles sont utilisées par [le protocole Ethernet](#ethernet)
+
+### *NAT* : Network Address Translation
+* **le NAT est une fonctionnalité d'un routeur**
+* **on ne parle pas ici de la carte NAT de Virtualbx/Workstation mais juste du concept de NAT**
+  * les cartes NAT de ces hyperviseurs utilisent des routeurs qui font du NAT (sur votre PC, il y a un routeur donc)
+* **le NAT** 
+  * permet à des machines possédant une adresse locale/privée (dans un LAN) 
+  * de communiquer avec des machines qui ont une adresse globale/publique (dans le WAN)
+  * et réciproquement
+* il existe plusieurs façons de faire/d'implémenter du NAT
+  * la plus simple consiste à permettre aux clients d'un LAN de joindre des serveurs d'un WAN
+* [le cours 2](./2.md#concept-et-utilisation-du-nat) est plus complet à ce sujet
 
 ### *RFC* : Request For Comments
 * document texte qui définit une notion, un concept, un protocole (principalement utilisés en informatique)

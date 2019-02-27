@@ -3,6 +3,7 @@
 
 * Supports de cours : 
   * [Cours 1 : Remise dans le bain (IP, MAC, ports, création + install de VM)](./1.md)
+  * [Cours 2 : Transport de données (TCP/UDP), adressage IP (WAN/LAN), NAT](./2.md)
 
 * [Lexique](./lexique.md)
 
