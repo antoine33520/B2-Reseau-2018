@@ -1,0 +1,36 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "centos/7"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.gui = false
+    vb.memory = "512"
+  end
+
+  config.vm.define "client1" do |client1|
+    client1.vm.hostname = 'client1.tp1.b2'
+
+    client1.vm.network :private_network, ip: "10.1.1.2", netmask: "255.255.255.0"
+    client1.vm.network :private_network, ip: "10.1.2.2", netmask: "255.255.255.252"
+
+    client1.vm.provider :virtualbox do |v|
+      v.customize ["modifyvm", :id, "--name", "client1.tp1.b2"]
+    end
+
+    config.vm.provision "shell", path: "./scripts/init-client1.sh"
+  end
+
+  config.vm.define "client2" do |client2|
+    client2.vm.hostname = 'client2.tp1.b2'
+
+    client2.vm.network :private_network, ip: "10.1.1.3", netmask: "255.255.255.0"
+
+    client2.vm.provider :virtualbox do |v|
+      v.customize ["modifyvm", :id, "--name", "client2.tp1.b2"]
+    end
+
+    config.vm.provision "shell", path: "./scripts/init-client2.sh"
+  end
+
+end
+
