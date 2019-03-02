@@ -10,7 +10,7 @@ Les rendus de TPs :
 * doivent être rendus à travers une plateforme utilisant `git`, comme Github
 * l'organisation de vos dépôts `git` est libre à vous, excepté :
   * un `README.md` à la racine
-    * il peut expliquer le contenu du dépôt, ou proposer des liens vers les rendus de TP
+    * il peut expliquer le contenu du dépôt, ou proposer des liens vers les rendus de TP (**LES RENDUS DOIVENT TOUJOURS ETRE EN MARKDOWN, SALE GOSSE**)
     * il peut aussi simplement contenir le rendu
   * un fichier `members` à la racine
     * **il contient un seul mot par ligne** : le nom d'un des membres de votre groupe pour les TPs à plusieurs
