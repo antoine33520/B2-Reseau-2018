@@ -66,6 +66,7 @@ Au menu :
   * [2. Serveur DHCP](#2-dhcp-server)
   * [3. Serveur NTP](#3-ntp-server)
   * [4. Serveur Web](#4-web-server)
+* [Bilan](#bilan)
 
 ---
 
@@ -406,8 +407,23 @@ On va utiliser le serveur web [NGINX](https://www.nginx.com/) pour faire ça sim
 
 Vous devriez pouvoir accéder au serveur web depuis vos clients avec un [`curl`](../../cours/lexique.md#curl-et-wget). 
 
-# Petit résumé :
-* on a des **clients** qui récupère tout leur réseau automatiquement
-  * une IP
-  * une passerelle
-  * un serveur DNS
+# Bilan
+* on a des **clients** 
+  * dans un réseau dédié
+  * qui récupèrent tout leur réseau automatiquement
+    * une IP
+    * une passerelle par défaut
+    * un serveur DNS
+  * qui peuvent aller sur internet normalement (avec firefox ou quoi) directement
+* on a des **serveurs**
+  * dans un réseau dédié
+  * qui ont une IP fixe
+  * qui hébergent des services d'infra (un simple `nginx` chez nous)
+* on a des **routeurs** 
+  * qui peuvent faire passer le trafic d'un réseau à l'autre
+  * qui possèdent un lien dédié (le `/30`)
+  * l'un d'eux fait du **NAT** pour permettre à tout le monde d'accéder à Internet
+
+Oh ! Et nos machines sont synchro pour ce qui est de l'heure. 
+
+:fire:
