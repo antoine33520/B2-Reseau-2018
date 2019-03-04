@@ -245,10 +245,10 @@ Dans le cadre du TP :
                     |
            10.0.2.15|
             (public)|                          router2.net12.b2
-                 +--+--+(trusted)                    +-----+
+                 +--+--+(trusted)           (trusted)+-----+
  router1.net12.b2|     |10.2.12.2/29     10.2.12.3/29|     |
                  |     +-----------------------------+     |
-                 +-----+                             +-----+
+                 +-----+                             +-----+  (trusted)
        10.2.1.254/24|                                   |10.2.2.254/24
            (trusted)|                                   |
                     |                                   |
@@ -270,20 +270,25 @@ S'assurer que la VM `router1` peut joindre internet :
 * ou un [`curl`](../../cours/lexique.md#curl-et-wget) si vous êtes à YNOV
 
 Pour ce faire, on va utiliser les *zones* du Firewall CentOS. 
-* mettre l'interface NAT dans la zone `public`
-  * pour un conf permanente : 
-    * dans le fichier de config de l'interface, ajouter `ZONE=public`
-    * il faut redémarrer l'interface
-  * pour une conf one-shot :
-    * `sudo firewall-cmd --add-interface=<INTERFACE_NAME> --zone=public --permanent`
-    * `sudo firewall-cmd --reload`
-* mettre l'interface de `net1` dans la zone `trusted`
-* mettre l'interface de `net12` dans la zone `trusted`
-* il faut redémarrer les interfaces avec `ifdown` puis `ifup` pour que le changement prenne effet
+* sur `router1`
+  * mettre l'interface NAT dans la zone `public`
+    * pour un conf permanente : 
+      * dans le fichier de config de l'interface, ajouter `ZONE=public`
+      * il faut redémarrer l'interface
+    * pour une conf one-shot :
+      * `sudo firewall-cmd --add-interface=<INTERFACE_NAME> --zone=public --permanent`
+      * `sudo firewall-cmd --reload`
+  * mettre l'interface de `net1` dans la zone `trusted`
+  * mettre l'interface de `net12` dans la zone `trusted`
+  * il faut redémarrer les interfaces avec `ifdown` puis `ifup` pour que le changement prenne effet
+  * **Activer le NAT** (ou *masquerading*) dans la zone `public`
+    * `sudo firewall-cmd --add-masquerade --zone=public --permanent`
+    * reload le firewall (vous connaissez la commande !)
+* sur `router2`
+  * mettre l'interface de `net1` dans la zone `trusted`
+  * mettre l'interface de `net12` dans la zone `trusted`
 
-Activer le NAT (ou *masquerading*) dans la zone `public`
-* `sudo firewall-cmd --add-masquerade --zone=public --permanent`
-* reload le firewall (vous connaissez la commande !)
+> **FIX :** La mise à jour des zones consiste à mettre tout en `trusted` (sur `router1` et `router2`) et l'interface externe en `public` (sur `router1`). C'est un raccourci rapide, mais vu la taille de l'infra c'est pas si déconnant. [Référez-vous à cette doc par exemple](https://doc.fedora-fr.org/wiki/Parefeu_-_firewall_-_FirewallD#Zones_de_r.C3.A9seaux) si vous voulez configurer plus finement.
 
 Ajouter une route aux autres machines pour qu'elles récup un accès Internet
 * d'abord sur `router2` pour tester
