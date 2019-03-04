@@ -345,6 +345,8 @@ Dernier détail : sur CentOS, le service qui gère NTP s'appelle `chrony` :
 
 ### Mise en place
 
+**Sur les machines qui utiliseront NTP, il faudra installer le paquet lié à `chrony`.**  
+
 Sur `router1` : 
 * éditer le fichier `/etc/chrony.conf`
   * [un contenu modèle se trouve ici](./chrony/serveur/chrony.conf)
