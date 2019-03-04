@@ -371,7 +371,9 @@ Sur `router1` :
   * `chronyc sources`
   * `chronyc tracking`
 
-Sur toutes les autres machines : 
+> Les machines qui ont besoin d'être synchronisée au niveau de l'heure sont les machines d'infra. Donc `router1`, `router2` et `server1` (pas les clients).
+
+Sur toutes `router2` et `server1` : 
 * éditer le fichier `/etc/chrony.conf`
   * [un contenu modèle se trouve ici](./chrony/client/chrony.conf)
 * [ouvrir le port utilisé par NTP](../../cours/procedures.md#interagir-avec-le-firewall)
