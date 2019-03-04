@@ -245,12 +245,12 @@ Dans le cadre du TP :
                     |
            10.0.2.15|
             (public)|                          router2.net12.b2
-                 +--+--+(internal)                   +-----+
+                 +--+--+(trusted)                    +-----+
  router1.net12.b2|     |10.2.12.2/29     10.2.12.3/29|     |
                  |     +-----------------------------+     |
                  +-----+                             +-----+
-       10.2.1.254/24|                                   |10.2.2.254/24
-            (public)|                                   |
+      10.2.1.254/24|                                   |10.2.2.254/24
+           (trusted)|                                   |
                     |                                   |
                     |                                   |
                     |                                   |
@@ -271,11 +271,14 @@ S'assurer que la VM `router1` peut joindre internet :
 
 Pour ce faire, on va utiliser les *zones* du Firewall CentOS. 
 * mettre l'interface NAT dans la zone `public`
-  * dans le fichier de config de l'interface, ajouter `ZONE=public`
-* mettre l'interface de `net1` dans la zone `public`
-  * dans le fichier de config de l'interface, ajouter `ZONE=public`
-* mettre l'interface de `net12` dans la zone `internal`
-  * dans le fichier de config de l'interface, ajouter `ZONE=internal`
+  * pour un conf permanente : 
+    * dans le fichier de config de l'interface, ajouter `ZONE=public`
+    * il faut redémarrer l'interface
+  * pour une conf one-shot :
+    * `sudo firewall-cmd --add-interface=<INTERFACE_NAME> --zone=public --permanent`
+    * `sudo firewall-cmd --reload`
+* mettre l'interface de `net1` dans la zone `trusted`
+* mettre l'interface de `net12` dans la zone `trusted`
 * il faut redémarrer les interfaces avec `ifdown` puis `ifup` pour que le changement prenne effet
 
 Activer le NAT (ou *masquerading*) dans la zone `public`
@@ -287,8 +290,11 @@ Ajouter une route aux autres machines pour qu'elles récup un accès Internet
   * ajouter une route par défaut
   * `sudo ip route add default via <IP_GATEWAY> dev <INTERFACE_NAME>`
   * `ping` ou [`curl`](../../cours/lexique.md#curl-et-wget) pour tester l'accès internet
-* ensuite idem sur `client1`
-* vérifier que `server1` n'a pas accès à internet
+  * si `ping 8.8.8.8` marche, mais `curl google.com` non, ça doit être votre résolution DNS qui n'est pas fonctionnelle
+    * ça se passe avec la commande `dig` et/ou le fichier `/etc/resolv.conf` (cherchez un peu ;) )
+* ensuite idem sur `client1` et `server1`  
+
+**Toutes les machines doivent pouvoir `curl google.com`.**
 
 ---
 
