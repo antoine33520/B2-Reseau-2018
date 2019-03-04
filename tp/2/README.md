@@ -367,7 +367,7 @@ Sur toutes les autres machines :
 * démarrer le service `chronyd`
   * `sudo systemctl start chronyd`
 * vérifier l'état de la synchronisation NTP
-
+  * *n'oubliez pas le coup de "heure d'été/heure d'hiver". En hiver on est en GMT+1...*
 ---
 
 ## 4. Web server
