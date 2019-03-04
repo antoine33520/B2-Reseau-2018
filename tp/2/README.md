@@ -313,7 +313,8 @@ Pour faire ça, on va recycler `client1` :
   * appelez-moi en cas de pb
 
 Pour tester : 
-* clonez une nouvelle fois votre VM patron, ce sera notre `client2.net2.b1`
+* clonez une nouvelle fois votre VM patron, ce sera notre `client2.net1.b1`
+  * il doit posséder une interface dans le même host-only que votre serveur DHCP
   * [configurer l'interface en DHCP, en dynamique (pas en statique)](../../cours/procedures.md#définir-une-ip-dynamique-dhcp)
   * utiliser [`dhclient`](../../cours/lexique.md#dhclient-linux-only)
 * dans un cas comme dans l'autre, vous devriez récupérer une IP dans la plage d'IP définie dans `dhcpd.conf`
