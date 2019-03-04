@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
       v.customize ["modifyvm", :id, "--name", "client1.tp1.b2"]
     end
 
-    config.vm.provision "shell", path: "./scripts/init-client1.sh"
+    client1.vm.provision "shell", path: "./scripts/init-client1.sh"
   end
 
   config.vm.define "client2" do |client2|
@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
       v.customize ["modifyvm", :id, "--name", "client2.tp1.b2"]
     end
 
-    config.vm.provision "shell", path: "./scripts/init-client2.sh"
+    client2.vm.provision "shell", path: "./scripts/init-client2.sh"
   end
 
 end
