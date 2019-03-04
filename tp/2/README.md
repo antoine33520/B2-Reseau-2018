@@ -405,3 +405,9 @@ On va utiliser le serveur web [NGINX](https://www.nginx.com/) pour faire ça sim
   * c'est le fichier `/usr/share/nginx/html/index.html`
 
 Vous devriez pouvoir accéder au serveur web depuis vos clients avec un [`curl`](../../cours/lexique.md#curl-et-wget). 
+
+# Petit résumé :
+* on a des **clients** qui récupère tout leur réseau automatiquement
+  * une IP
+  * une passerelle
+  * un serveur DNS
