@@ -33,9 +33,7 @@ Dans ce TP on va mettre en place des topologies un peu plus intéressantes. Pour
 
 On va mettre en place plusieurs labs pour y aller petit à petit.  
 
-Le dernier lab est une topo que l'on voit souvent : c'est le principe du *router-on-a-stick.* C'est simple à mettre en place, et ça permet répodnre aux besoin de beaucoup de petites boîtes.
-
-**Comme d'habitude, je vous conseille très fortement d'utiliser Wireshark régulièrement pour voir ce qu'il se passe, même quand c'est pas explicitement demandé**. Ca vous permet de voir concrètement les messages envoyés par deux machines. What else ?
+Pour le dernier lab, vous devrez imaginer une topo qui remet en place tout ce qu'on a vu jusqu'à maintenant. Mais si ça va être fun.
 
 # Déroulement et rendu du TP 
 * vous aurez besoin de : 
@@ -63,14 +61,11 @@ Le dernier lab est une topo que l'on voit souvent : c'est le principe du *router
 
 # Hints généraux
 
-* **pour vos recherches Google** (ou autres) : 
-  * **en anglais**
-  * **précisez l'OS et la version** dans vos recherches ("centos 7" ici)
 * dans le TP, **lisez en entier une partie avant de commencer à la réaliser.** Ca donne du sens et aide à la compréhension
 * **allez à votre rythme.** Le but n'est pas de finir le TP, mais plutôt de bien saisir et correctement appréhender les différentes notions
 * **n'hésitez pas à me demander de l'aide régulièrement** mais essayez toujours de chercher un peu par vous-mêmes avant :)
-* pour moult raisons, il sera préférable pendant les cours de réseau de **désactiver votre firewall**. Vous comprendrez ces raisons au fur et à mesure du déroulement du cours très justement. N'oubliez pas de le réactiver après coup.
 * **utilisez SSH dès que possible**
+* **utilisez Wireshark** pour comprendre ce qu'il se passe vraiment sur le réseau, n'attendez plus que je vous dise de le lancer
 
 ---
 
@@ -153,7 +148,7 @@ client1           SW1                  SW 2
 
 * **Vérifier que**
   * [ ] `client1.lab1.tp3` peut joindre `client3.lab1.tp3`
-    * `ping` et/ou `traceroute`
+    * `ping` et/ou [`traceroute`](../../cours/lexique.md#traceroute)
   * [ ] `client2.lab1.tp3` n'est joignable par personne
 
 # II. Manipulation simple de routeurs
@@ -202,7 +197,7 @@ Hosts | `lab2-net1` |  `lab2-net2` |  `lab2-net12`
 `router1.lab2.tp3` | `10.2.1.254/24` | x | `10.2.12.1/30`
 `router2.lab2.tp3` | x | `10.2.2.254/24` | `10.2.12.2/30`
 
-* pour les IPs des machines Cisco, [référez-vous à la section dédie dans les procédures Cisco](../../cours/procedures-cisco.md#définir-une-ip-statique)
+* pour les IPs des machines Cisco, [référez-vous à la section dédiée dans les procédures Cisco](../../cours/procedures-cisco.md#définir-une-ip-statique)
 
 * **vérifier que :**
   * [ ] les clients et serveurs peuvent joindre leurs gateways respectives
@@ -223,9 +218,9 @@ Sur toutes les machines :
 
 # III. Mise en place d'OSPF
 
-Dès qu'on atteint un certain volume de routeurs, le routage statique atteint très vite ses limites : c'est extrêment long et fastidieux. Par conséquent, c'est un terrain propice à l'erreur humaine et c'est très difficile à maintenir. De plus nous n'avons aucun calcul de route optimale.  
+Dès qu'on atteint un certain nombre de routeurs, le routage statique atteint très vite ses limites : c'est extrêment long et fastidieux. Par conséquent, c'est un terrain propice à l'erreur humaine et c'est très difficile à maintenir. De plus nous n'avons aucun calcul de route optimale.  
 
-Les protocoles de routage dynamique permettent entre autres de résoudre ces problèmes. Nous étudierons OSPF dans ce TP. 
+Les protocoles de routage dynamique permettent entre autres de résoudre ces problèmes. Nous étudierons le protocole OSPF dans ce TP. 
 
 ## 1. Mise en place du lab
 
