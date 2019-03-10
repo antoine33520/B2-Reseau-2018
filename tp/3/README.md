@@ -120,7 +120,7 @@ Hosts | `lab1-net1`
 `client2.lab1.tp3` | `10.1.1.2/24`
 `client3.lab1.tp3` | `10.1.1.3/24`
 
-#### Vérification de mise en place
+#### Vérification
 * [ ] [Nom de domaines](../../cours/procedures.md#changer-son-nom-de-domaine) sur toutes les machines
 * [ ] Toutes les machines doivent pouvoir se `ping`
 
@@ -146,10 +146,12 @@ client1           SW1                  SW 2
 
 ```
 
-* **Vérifier que**
-  * [ ] `client1.lab1.tp3` peut joindre `client3.lab1.tp3`
-    * `ping` et/ou [`traceroute`](../../cours/lexique.md#traceroute)
-  * [ ] `client2.lab1.tp3` n'est joignable par personne
+#### Vérification
+* [ ] `client1.lab1.tp3` peut joindre `client3.lab1.tp3`
+  * `ping` et/ou [`traceroute`](../../cours/lexique.md#traceroute)
+* [ ] `client2.lab1.tp3` n'est joignable par personne
+
+---
 
 # II. Manipulation simple de routeurs
 
@@ -199,9 +201,9 @@ Hosts | `lab2-net1` |  `lab2-net2` |  `lab2-net12`
 
 * pour les IPs des machines Cisco, [référez-vous à la section dédiée dans les procédures Cisco](../../cours/procedures-cisco.md#définir-une-ip-statique)
 
-* **vérifier que :**
-  * [ ] les clients et serveurs peuvent joindre leurs gateways respectives
-  * [ ] les routeurs peuvent discuter entre eux
+#### Vérification
+* [ ] les clients et serveurs peuvent joindre leurs gateways respectives
+* [ ] les routeurs peuvent discuter entre eux
 
 ## 2. Configuration du routage statique
 
@@ -213,8 +215,10 @@ Sur toutes les machines :
   * vos routeurs connaissent déjà la route, puisqu'ils y sont directement connectés
   * et personne d'autre n'a besoin de la connaître
 
-**Vérifier que :**
+#### Vérification
 * [ ] tous les clients et serveurs peuvent se joindre
+
+---
 
 # III. Mise en place d'OSPF
 
@@ -245,9 +249,9 @@ Hosts | `10.3.100.0/30` | `10.3.100.4/30` | `10.3.100.8/30` | `10.3.100.12/30` |
 
 * pour les IPs des machines Cisco, [référez-vous à la section dédie dans les procédures Cisco](../../cours/procedures-cisco.md#définir-une-ip-statique)
 
-* vérifier que :
-  * les clients et serveurs peuvent joindre leurs [gateways](../../lexique.md#passerelle-ou-gateway) respectives
-  * les routeurs peuvent discuter entre eux (de point à point)
+#### Vérification
+* les clients et serveurs peuvent joindre leurs [gateways](../../lexique.md#passerelle-ou-gateway) respectives
+* les routeurs peuvent discuter entre eux (de point à point)
 
 ## 2. Configuration de OSPF
 
@@ -266,7 +270,7 @@ Sur chaque routeur :
 Sur le client et le serveur :
 * ajouter une route par défaut qui pointe vers leurs [passerelles](../../lexique.md#passerelle-ou-gateway) respectives
 
-**Vérifier que :**
+#### Vérification
 * tous les routeurs peuvent se joindre
 * `client1.lab3.tp3` peut joindre `server1.lab3.tp3`
 
@@ -304,6 +308,8 @@ Le dernier lab a pour objectif de remettre en pratique tout ce qui a été vu ju
 > **N'hésitez pas à me soumettre votre topologie avant de vous lancer.**
 
 :fire: :fire: :fire: Une infra utile avec des vrais clients, des vrais services d'infra, du vrai routage, une vraie topo ! Quelque chose qu'on rencontre dans le monde réel. :fire: :fire: :fire: 
+
+---
 
 # Annexe 1 : NAT dans GNS3
 
