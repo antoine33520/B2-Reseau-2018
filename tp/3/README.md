@@ -220,7 +220,7 @@ Sur toutes les machines :
 
 Dès qu'on atteint un certain nombre de routeurs, le routage statique atteint très vite ses limites : c'est extrêment long et fastidieux. Par conséquent, c'est un terrain propice à l'erreur humaine et c'est très difficile à maintenir. De plus nous n'avons aucun calcul de route optimale.  
 
-Les protocoles de routage dynamique permettent entre autres de résoudre ces problèmes. Nous étudierons le protocole OSPF dans ce TP. 
+Les protocoles de routage dynamique permettent entre autres de résoudre ces problèmes. Nous étudierons [le protocole OSPF](../../cours/3.md#ospf) dans ce TP. 
 
 ## 1. Mise en place du lab
 
@@ -246,7 +246,7 @@ Hosts | `10.3.100.0/30` | `10.3.100.4/30` | `10.3.100.8/30` | `10.3.100.12/30` |
 * pour les IPs des machines Cisco, [référez-vous à la section dédie dans les procédures Cisco](../../cours/procedures-cisco.md#définir-une-ip-statique)
 
 * vérifier que :
-  * les clients et serveurs peuvent joindre leurs gateways respectives
+  * les clients et serveurs peuvent joindre leurs [gateways](../../lexique.md#passerelle-ou-gateway) respectives
   * les routeurs peuvent discuter entre eux (de point à point)
 
 ## 2. Configuration de OSPF
@@ -264,7 +264,7 @@ Sur chaque routeur :
   * avec une commande `network`
 
 Sur le client et le serveur :
-* ajouter une route par défaut qui pointe vers leurs passerelles respectives
+* ajouter une route par défaut qui pointe vers leurs [passerelles](../../lexique.md#passerelle-ou-gateway) respectives
 
 **Vérifier que :**
 * tous les routeurs peuvent se joindre
@@ -278,14 +278,14 @@ Le dernier lab a pour objectif de remettre en pratique tout ce qui a été vu ju
 
 **Je vous laisse imaginer une topo pour remttre tout ça en place** mais elle doit :
 * comporter plusieurs routeurs Cisco
-  * ils doivent utiliser OSPF
+  * ils doivent utiliser [OSPF](../../cours/procedures-cisco.md#définir-une-ip-statique#ospf)
   * une seule aire sera utilisée : l'aire de backbone (area 0)
 * comporter plusieurs switches Cisco
   * ils doivent mettre en place des VLANs sur tous les port utilisés
     * *access* ou *trunk*
 * comporter plusieurs VLANs
   * au moins 2 : `clients` et `servers`
-* permettre aux clients du réseau (client et serveurs) d'accéder à Internet
+* permettre aux clients du réseau (client et serveurs) d'accéder à Internet grâce à la [fonctionnalité NAT](../../cours/lexique.md#nat--network-address-translation)
   * cela sera fait avec le NAT de GNS3
   * vous trouverez en [Annexe 1](#annexe-1--nat-dans-gns3) un document pour la mise en place du NAT dans GNS3
   * [la mise en place du NAT avec un routeur Cisco est dispo ici](../../cours/procedures-cisco.md#nat)
