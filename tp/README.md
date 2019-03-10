@@ -2,6 +2,7 @@
 
 * [TP1 : Remise dans le bain](./1)
 * [TP2 : Routage statique et services d'infra](./2)
+* [TP3 : OSPF, VLAN, une vraie topologie](./3)
 
 # Rendu de TP
 
