@@ -307,7 +307,9 @@ Je vous conseille de vous organiser pour ne pas que ce soit l'enfer
 
 **N'hésitez pas à me soumettre votre topologie avant de vous lancer.**
 
-> :fire: :fire: :fire: Une infra utile avec des vrais clients, des vrais services d'infra, du vrai routage, une vraie topo ! Quelque chose qu'on rencontre dans le monde réel. :fire: :fire: :fire: 
+---
+
+:fire: :fire: :fire: Une infra utile avec des vrais clients, des vrais services d'infra, du vrai routage, une vraie topo ! Quelque chose qu'on rencontre dans le monde réel. :fire: :fire: :fire: 
 
 ---
 
