@@ -278,24 +278,24 @@ Sur le client et le serveur :
 Le dernier lab a pour objectif de remettre en pratique tout ce qui a été vu jusqu'à maintenant.  
 
 **Je vous laisse imaginer une topo pour remttre tout ça en place** mais elle doit :
-**1. comporter plusieurs routeurs Cisco**
+**1. comporter plusieurs routeurs Cisco**  
     * ils doivent utiliser **[OSPF](../../cours/procedures-cisco.md#définir-une-ip-statique#ospf)**
-    * une seule aire sera utilisée : l'aire de backbone (area 0)
-**2. comporter plusieurs switches Cisco**
+    * une seule aire sera utilisée : l'aire de backbone (area 0)  
+**2. comporter plusieurs switches Cisco**  
     * ils doivent mettre en place des **VLANs** sur tous les port utilisés
       * *access* ou *trunk*
   * comporter plusieurs VLANs
-    * au moins 2 : `clients` et `servers`
-**3. permettre aux clients du réseau (client et serveurs) d'accéder à Internet grâce à la [fonctionnalité NAT](../../cours/lexique.md#nat--network-address-translation)**
+    * au moins 2 : `clients` et `servers`  
+**3. permettre aux clients du réseau (client et serveurs) d'accéder à Internet grâce à la [fonctionnalité NAT](../../cours/lexique.md#nat--network-address-translation)**  
     * cela sera fait avec le NAT de GNS3
     * vous trouverez en [Annexe 1](#annexe-1--nat-dans-gns3) un document pour la mise en place du NAT dans GNS3
-    * [la mise en place du NAT avec un routeur Cisco est dispo ici](../../cours/procedures-cisco.md#nat)
-**4. comporter un service d'infra**
+    * [la mise en place du NAT avec un routeur Cisco est dispo ici](../../cours/procedures-cisco.md#nat)  
+**4. comporter un service d'infra**  
     * se référer au [TP précédent](../2/README.md#ii-nat-et-services-dinfra)
-    * pour accéder à internet, vous devez utiliser le NAT mis en place précédemment
-**5. si vous voulez permettre aux clients de joindre le réseau des serveurs, il faudra faire du *routage inter-vlan***
+    * pour accéder à internet, vous devez utiliser le NAT mis en place précédemment  
+**5. si vous voulez permettre aux clients de joindre le réseau des serveurs, il faudra faire du *routage inter-vlan***  
     * c'est stylé et en vrai c'est pas beaucoup de configuration
-    * je vous conseille une topologie avec un *router-on-a-stick*
+    * je vous conseille une topologie avec un *router-on-a-stick*  
 
 Je vous conseille de vous organiser pour ne pas que ce soit l'enfer
   * faites des configurations peristentes partout (pour pas tout perdre en cas de reboot)
