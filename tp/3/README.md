@@ -76,7 +76,17 @@ Le dernier lab est une topo que l'on voit souvent : c'est le principe du *router
 
 # Sommaire
 
-*
+* [I. Manipulation de switches et de VLAN](#i-manipulation-de-switches-et-de-vlan)
+  * [1. Mise en place du lab](#1-mise-en-place-du-lab)
+  * [2. Configuration des VLANs](#2-configuration-des-vlans)
+* [II. Manipulation simple de routeurs](#ii-manipulation-simple-de-routeurs)
+  * [1. Mise en place du lab](#1-mise-en-place-du-lab-1)
+  * [2. Configuration du routage statique](#2-configuration-du-routage-statique)
+* [III. Mise en place d'OSPF](#iii-mise-en-place-dospf)
+  * [1. Mise en place du lab](#1-mise-en-place-du-lab-2)
+  * [2. Configuration de OSPF](#2-configuration-de-ospf)
+* [IV. Lab Final](#iv-lab-final)
+* [Annexe 1 : NAT dans GNS3](#annexe-1--nat-dans-gns3)
 
 ---
 
@@ -141,7 +151,7 @@ client1           SW1                  SW 2
 
 ```
 
-* Vérifier que
+* **Vérifier que**
   * [ ] `client1.lab1.tp3` peut joindre `client3.lab1.tp3`
     * `ping` et/ou `traceroute`
   * [ ] `client2.lab1.tp3` n'est joignable par personne
@@ -194,11 +204,11 @@ Hosts | `lab2-net1` |  `lab2-net2` |  `lab2-net12`
 
 * pour les IPs des machines Cisco, [référez-vous à la section dédie dans les procédures Cisco](../../cours/procedures-cisco.md#définir-une-ip-statique)
 
-* vérifier que :
-  * les clients et serveurs peuvent joindre leurs gateways respectives
-  * les routeurs peuvent discuter entre eux
+* **vérifier que :**
+  * [ ] les clients et serveurs peuvent joindre leurs gateways respectives
+  * [ ] les routeurs peuvent discuter entre eux
 
-## Configuration du routage statique
+## 2. Configuration du routage statique
 
 Sur toutes les machines :
 * ajouter une route vers `lab2-net1` et `lab2-net2` à toutes les machines qui ne les ont pas déjà
@@ -207,6 +217,9 @@ Sur toutes les machines :
 * **PAS DE ROUTES A AJOUTER VERS `lab2-net12`**
   * vos routeurs connaissent déjà la route, puisqu'ils y sont directement connectés
   * et personne d'autre n'a besoin de la connaître
+
+**Vérifier que :**
+* [ ] tous les clients et serveurs peuvent se joindre
 
 # III. Mise en place d'OSPF
 
@@ -258,7 +271,7 @@ Sur chaque routeur :
 Sur le client et le serveur :
 * ajouter une route par défaut qui pointe vers leurs passerelles respectives
 
-Vérifier que :
+**Vérifier que :**
 * tous les routeurs peuvent se joindre
 * `client1.lab3.tp3` peut joindre `server1.lab3.tp3`
 
