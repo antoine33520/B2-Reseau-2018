@@ -93,7 +93,7 @@ On va aussi mettre en place des VLANs afin d'isoler certaines parties du trafic.
 
 # 1. Mise en place du lab
 
-#### Topologie
+#### > Topologie
 ```
 client1           SW1                  SW 2
 +----+         +-------+            +-------+
@@ -109,18 +109,15 @@ client1           SW1                  SW 2
                client2               client3
 ```
 
-#### Réseau(x)
-* `lab1-net1` : `10.1.1.0/24`
+#### > Tableau d'adressage
 
-#### Tableau d'adressage
-
-Hosts | `lab1-net1`
+Hosts | `10.1.1.0/24`
 --- | ---
 `client1.lab1.tp3` | `10.1.1.1/24`
 `client2.lab1.tp3` | `10.1.1.2/24`
 `client3.lab1.tp3` | `10.1.1.3/24`
 
-#### Vérification
+#### > Vérification
 * [ ] [Nom de domaines](../../cours/procedures.md#changer-son-nom-de-domaine) sur toutes les machines
 * [ ] Toutes les machines doivent pouvoir se `ping`
 
@@ -146,7 +143,7 @@ client1           SW1                  SW 2
 
 ```
 
-#### Vérification
+#### > Vérification
 * [ ] `client1.lab1.tp3` peut joindre `client3.lab1.tp3`
   * `ping` et/ou [`traceroute`](../../cours/lexique.md#traceroute)
 * [ ] `client2.lab1.tp3` n'est joignable par personne
@@ -159,7 +156,7 @@ Utilisation de routeurs Cisco pour cette partie, on va mettre en place un routag
 
 ## 1. Mise en place du lab
 
-#### Topologie
+#### > Topologie
 ```
                            10.2.12.0/30
 
@@ -181,7 +178,7 @@ client1          +------+               +------+
 
 ```
 
-#### Réseau(x)
+#### > Réseau(x)
 
 Nom | Adresse
 --- | ---
@@ -189,7 +186,7 @@ Nom | Adresse
 `lab2-net2` | `10.2.2.0/24`
 `lab2-net12` | `10.2.12.0/30`
 
-#### Tableau d'adressage
+#### > Tableau d'adressage
 
 Hosts | `lab2-net1` |  `lab2-net2` |  `lab2-net12` 
 --- | --- | --- | ---
@@ -201,7 +198,7 @@ Hosts | `lab2-net1` |  `lab2-net2` |  `lab2-net12`
 
 * pour les IPs des machines Cisco, [référez-vous à la section dédiée dans les procédures Cisco](../../cours/procedures-cisco.md#définir-une-ip-statique)
 
-#### Vérification
+#### > Vérification
 * [ ] les clients et serveurs peuvent joindre leurs gateways respectives
 * [ ] les routeurs peuvent discuter entre eux
 
@@ -215,7 +212,7 @@ Sur toutes les machines :
   * vos routeurs connaissent déjà la route, puisqu'ils y sont directement connectés
   * et personne d'autre n'a besoin de la connaître
 
-#### Vérification
+#### > Vérification
 * [ ] tous les clients et serveurs peuvent se joindre
 
 ---
@@ -228,13 +225,13 @@ Les protocoles de routage dynamique permettent entre autres de résoudre ces pro
 
 ## 1. Mise en place du lab
 
-#### Topologie
+#### Q Topologie
 
 <br><p align="center">
   <img src="./pic/lab3-ospf.png" title="Lab 3 : OSPF">
 </p>
 
-#### Tableau d'adressage
+#### > Tableau d'adressage
 
 Hosts | `10.3.100.0/30` | `10.3.100.4/30` | `10.3.100.8/30` | `10.3.100.12/30` | `10.3.100.16/30` | `10.3.100.20/30` | `10.3.101.0/24` | `10.3.102.0/24`
 --- | --- | --- | --- | --- | --- | --- | --- | --- 
@@ -249,7 +246,7 @@ Hosts | `10.3.100.0/30` | `10.3.100.4/30` | `10.3.100.8/30` | `10.3.100.12/30` |
 
 * pour les IPs des machines Cisco, [référez-vous à la section dédie dans les procédures Cisco](../../cours/procedures-cisco.md#définir-une-ip-statique)
 
-#### Vérification
+#### > Vérification
 * les clients et serveurs peuvent joindre leurs [gateways](../../lexique.md#passerelle-ou-gateway) respectives
 * les routeurs peuvent discuter entre eux (de point à point)
 
@@ -270,7 +267,7 @@ Sur chaque routeur :
 Sur le client et le serveur :
 * ajouter une route par défaut qui pointe vers leurs [passerelles](../../lexique.md#passerelle-ou-gateway) respectives
 
-#### Vérification
+#### > Vérification
 * tous les routeurs peuvent se joindre
 * `client1.lab3.tp3` peut joindre `server1.lab3.tp3`
 
