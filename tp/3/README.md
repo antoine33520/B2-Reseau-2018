@@ -297,8 +297,6 @@ Le dernier lab a pour objectif de remettre en pratique tout ce qui a été vu ju
     * c'est stylé et en vrai c'est pas beaucoup de configuration
     * je vous conseille une topologie avec un *router-on-a-stick*
 
----
-
 Je vous conseille de vous organiser pour ne pas que ce soit l'enfer
   * faites des configurations peristentes partout (pour pas tout perdre en cas de reboot)
   * utilisez un outil comme [draw.io](https://www.draw.io/) et faites un schéma de votre topologie
@@ -309,7 +307,7 @@ Je vous conseille de vous organiser pour ne pas que ce soit l'enfer
 
 ---
 
-:fire: :fire: :fire: Une infra utile avec des vrais clients, des vrais services d'infra, du vrai routage, une vraie topo ! Quelque chose qu'on rencontre dans le monde réel. :fire: :fire: :fire: 
+:fire: :fire: :fire: GG. On voit ce genre de petites infras un peu partout dans le monde réel. Il manque encore quelques éléments, mais on est très proches d'une infra réelle petite échelle. :)  :fire: :fire: :fire: 
 
 ---
 
