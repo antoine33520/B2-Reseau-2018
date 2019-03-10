@@ -277,7 +277,7 @@ Sur le client et le serveur :
 
 Le dernier lab a pour objectif de remettre en pratique tout ce qui a été vu jusqu'à maintenant.  
 
-**Je vous laisse imaginer une topo pour remttre tout ça en place** mais elle doit :
+**Je vous laisse imaginer une topo pour remttre tout ça en place** mais elle doit :  
 **1. comporter plusieurs routeurs Cisco**  
     * ils doivent utiliser **[OSPF](../../cours/procedures-cisco.md#définir-une-ip-statique#ospf)**
     * une seule aire sera utilisée : l'aire de backbone (area 0)  
