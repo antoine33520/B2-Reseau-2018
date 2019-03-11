@@ -2,17 +2,18 @@
 
 Vous trouverez ici quelques mini-procédures pour réaliser certaines opérations récurrentes. Ce sera évidemment principalement utilisé pour notre cours de réseau, mais peut-être serez-vous amenés à le réutiliser plus tard.  
 
-**Elles sont écrites pour un système Cisco**.
+**Elles sont écrites pour un système Cisco**.  
+
+C'est quoi un routeur Cisco ? C'est comme votre PC, un serveur, ou une machine virtuelle CentOS : un "ordinateur". Juste, le matériel et l'OS sont optimisés pour faire du routage. 
 
 ## Sommaire
 
 * Tous les équipements
-  * [Les modes du terminal](#les-modes-du-terminal)
+  * [Présentation du terminal Cisco](#presentation-du-terminal-cisco)
   * [Garder ses changements après reboot](#garder-les-changements-après-reboot)
   * [Changer son nom de domaine](#changer-son-nom-de-domaine)
   * [Gérer sa table ARP](#gérer-sa-table-arp)
 * Routeurs
-  * [Voir des informations](#voir-des-informations)
   * [Définir une IP statique](#définir-une-ip-statique)
   * [Ajouter une route statique](#ajouter-une-route-statique)
   * [OSPF](#ospf)
@@ -24,7 +25,7 @@ Vous trouverez ici quelques mini-procédures pour réaliser certaines opération
 
 ## Tous les équipements
 
-### Le terminal Cisco
+### Présentation du terminal Cisco
 
 #### Les modes
 
@@ -49,6 +50,7 @@ L'idée globale c'est que pour **faire des choses** on passera en `global conf` 
 #### Fonctionnalités
 
 Il fait pas grand chose non plus le shell Cisco mais il est pas là pour ça. Cela dit :
+* `ping` et `traceroute` évidemment !
 * y'a `telnet` donc possible de tester des connexions arbitraires sur des ports
 * y'a le `|` et y'a un équivalent de `grep` et ça c'est le :fire:
   * `show running config | s address`
@@ -62,7 +64,7 @@ La commande `show` permet de voir toute la configuration actuelle de la machine,
   * `show ip interface brief`
   * `show ip interface`
 * `show ?` pour plus d'infoooos
- 
+
 ### Garder les changements après reboot
 Les équipements Cisco possèdent deux configurations (d'une certain façon) :
 * la `running-config`
