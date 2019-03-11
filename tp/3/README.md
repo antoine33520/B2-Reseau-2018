@@ -31,6 +31,8 @@ Dans ce TP on va mettre en place des topologies un peu plus intéressantes. Pour
   * permet aux clients d'accéder au réseau
   * dans tout le TP, les "switches" seront des iOU Cisco
 
+Parcourez le début de [la page des procédures Cisco](../../cours/procedures-cisco.md) avant de vous jeter dans le TP.
+
 On va mettre en place plusieurs labs pour y aller petit à petit.  
 
 Pour le dernier lab, vous devrez imaginer une topo qui remet en place tout ce qu'on a vu jusqu'à maintenant. Mais si ça va être fun.
@@ -48,7 +50,8 @@ Pour le dernier lab, vous devrez imaginer une topo qui remet en place tout ce qu
   * l'iOS devra être celui d'un [Cisco 3640](https://drive.google.com/drive/folders/1DFe2u5tZldL_y_UYm32ZbmT0cIfgQM2p)
 
 * les switches :
-  * afin d'utiliser GNS3 comme plateforme pour tous les labs, on utilisera les [iOU dispos sur le même drive]()
+  * afin d'utiliser GNS3 comme plateforme pour tous les labs, on utilisera les [iOU dispos sur le même drive](https://drive.google.com/drive/folders/1LBIlztgGVAk4XsAeovKb1JHBrRg8QPSz)
+    * **tout télécharger pour l'iOU**
   * on va faire l'install ensemble
 
 * les machines virtuelles : 
