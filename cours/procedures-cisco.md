@@ -42,7 +42,7 @@ L'idée globale c'est que pour **faire des choses** on passera en `global conf`,
 #### Abbréviation/Complétion/Help
 
 * Quand vous tapez une commande, vous pouvez tapez `?` pour avoir une aide sur la complétion de la commande (à n'importe quel moment).  
-* L'auto-complétion avec <TAB> est toujours recommandée
+* L'auto-complétion avec TAB est toujours recommandée
 * Toutes les commandes peuvent être abrégées quand il n'y a qu'un seul choix possible
   * mieux avec un exemple
   * `show ip interface brief` devient `sh ip int br` par exemple
