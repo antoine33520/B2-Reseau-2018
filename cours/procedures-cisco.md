@@ -24,7 +24,10 @@ Vous trouverez ici quelques mini-procédures pour réaliser certaines opération
 
 ## Tous les équipements
 
-### Les modes du terminal
+### Le terminal Cisco
+
+#### Les modes
+
 Le terminal Cisco possède plusieurs modes
 
 Mode | Commande | What ? | Why ?
@@ -35,6 +38,31 @@ Mode | Commande | What ? | Why ?
 
 L'idée globale c'est que pour **faire des choses** on passera en `global conf` pour **faire** des choses, et on restera en **user EXEC** pour **voir** des choses.
 
+#### Abbréviation/Complétion/Help
+
+* Quand vous tapez une commande, vous pouvez tapez `?` pour avoir une aide sur la complétion de la commande (à n'importe quel moment).  
+* L'auto-complétion avec <TAB> est toujours recommandée
+* Toutes les commandes peuvent être abrégées quand il n'y a qu'un seul choix possible
+  * mieux avec un exemple
+  * `show ip interface brief` devient `sh ip int br` par exemple
+ 
+#### Fonctionnalités
+
+Il fait pas grand chose non plus le shell Cisco mais il est pas là pour ça. Cela dit :
+* y'a `telnet` donc possible de tester des connexions arbitraires sur des ports
+* y'a le `|` et y'a un équivalent de `grep` et ça c'est le :fire:
+  * `show running config | s address`
+
+#### La commande `show`
+
+La commande `show` permet de voir toute la configuration actuelle de la machine, par exemple : 
+* toute la configuration actuelle `show running-config`
+* toute la configuration "froide", utilisée lors du boot `show startup-config`
+* la configuration IP des interfaces 
+  * `show ip interface brief`
+  * `show ip interface`
+* `show ?` pour plus d'infoooos
+ 
 ### Garder les changements après reboot
 Les équipements Cisco possèdent deux configurations (d'une certain façon) :
 * la `running-config`
@@ -225,6 +253,12 @@ Exemple, pour ajouter une route vers le réseau 10.1.0.0/24 en passant par la pa
 ### VLAN
 
 **Switches uniquement**  
+
+**0. Pour voir les VLANs actuels du switch**
+```
+# show vlan
+# show vlan br
+```
 
 **1. Passer en mode configuration**
 ```
