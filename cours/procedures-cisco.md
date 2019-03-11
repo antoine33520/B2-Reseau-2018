@@ -60,9 +60,11 @@ Il fait pas grand chose non plus le shell Cisco mais il est pas là pour ça. Ce
 La commande `show` permet de voir toute la configuration actuelle de la machine, par exemple : 
 * toute la configuration actuelle `show running-config`
 * toute la configuration "froide", utilisée lors du boot `show startup-config`
-* la configuration IP des interfaces 
+* la configuration IP des interfaces (sur un routeur)
   * `show ip interface brief`
   * `show ip interface`
+* la configuration IP des interfaces (sur un switch)
+  * `show interface switchport`
 * `show ?` pour plus d'infoooos
 
 ### Garder les changements après reboot
