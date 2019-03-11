@@ -55,6 +55,14 @@ Il fait pas grand chose non plus le shell Cisco mais il est pas là pour ça. Ce
 * y'a le `|` et y'a un équivalent de `grep` et ça c'est le :fire:
   * `show running config | s address`
 
+#### Annuler un changement
+
+Pour annuler un changement sur une machine Cisco, il suffit de taper la même commande et de la précéder par `no`. 
+* mettre une IP
+  * `ip address 10.1.1.10 255.255.255.0`
+* enlever l'IP
+  * `no ip address 10.1.1.10 255.255.255.0`
+
 #### La commande `show`
 
 La commande `show` permet de voir toute la configuration actuelle de la machine, par exemple : 
@@ -174,8 +182,7 @@ Exemple, pour ajouter une route vers le réseau 10.1.0.0/24 en passant par la pa
 # show ip route
 ```
 
-### OSPF
-
+### [OSPF](./3.md)
 
 **Routeur uniquement**  
 
@@ -189,7 +196,8 @@ Exemple, pour ajouter une route vers le réseau 10.1.0.0/24 en passant par la pa
 (config)# router ospf 1
 ```
 * le `1` correspond à l'ID de ce processus OSPF
-* nous utiliserons toujours `1` pendant nos derniers cours
+  * ui on peut en faire tourner plusieurs
+* **nous utiliserons toujours `1` pendant nos cours**
 
 **3. Définir un `router-id`**
 ```
@@ -218,7 +226,7 @@ Exemple, pour ajouter une route vers le réseau 10.1.0.0/24 en passant par la pa
 
 ---
 
-### NAT
+### [NAT](./2.md#concept-et-utilisation-du-nat)
 
 **Routeur uniquement**  
 
