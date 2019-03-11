@@ -66,7 +66,7 @@ La commande `show` permet de voir toute la configuration actuelle de la machine,
 * `show ?` pour plus d'infoooos
 
 ### Garder les changements après reboot
-Les équipements Cisco possèdent deux configurations (d'une certain façon) :
+Les équipements Cisco possèdent deux configurations :
 * la `running-config`
   * c'est la conf actuelle
   * elle contient toutes vos modifications
