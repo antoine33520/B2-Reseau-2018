@@ -29,7 +29,7 @@ C'est quoi un routeur Cisco ? C'est comme votre PC, un serveur, ou une machine v
 
 #### Les modes
 
-Le terminal Cisco possède plusieurs modes
+Le terminal Cisco possède plusieurs modes :
 
 Mode | Commande | What ? | Why ?
 --- | --- | --- | ---
@@ -37,7 +37,7 @@ Mode | Commande | What ? | Why ?
 `privileged EXEC` | enable | Mode privilégié : permet de réalisé des actions privilégiées sur la machine | Peu utilisé dans notre cours au début
 `global conf` | conf t | Configuration de la machine | Permet de configurer les interface et le routage 
 
-L'idée globale c'est que pour **faire des choses** on passera en `global conf` pour **faire** des choses, et on restera en **user EXEC** pour **voir** des choses.
+L'idée globale c'est que pour **faire des choses** on passera en `global conf`, et on restera en **user EXEC** pour **voir** des choses.
 
 #### Abbréviation/Complétion/Help
 
