@@ -31,6 +31,8 @@ Dans ce TP on va mettre en place des topologies un peu plus intéressantes. Pour
   * permet aux clients d'accéder au réseau
   * dans tout le TP, les "switches" seront des iOU Cisco
 
+Parcourez le début de [la page des procédures Cisco](../../cours/procedures-cisco.md) avant de vous jeter dans le TP.
+
 On va mettre en place plusieurs labs pour y aller petit à petit.  
 
 Pour le dernier lab, vous devrez imaginer une topo qui remet en place tout ce qu'on a vu jusqu'à maintenant. Mais si ça va être fun.
