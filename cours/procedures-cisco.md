@@ -203,10 +203,10 @@ Exemple, pour ajouter une route vers le réseau 10.1.0.0/24 en passant par la pa
 (config-router)# network 10.6.100.0 0.0.0.3 area 0
 ```
 * cette commande partage le réseau `10.6.100.0/30` avec les voisins OSPF, et indique que ce réseau est dans l'`area 0` (l'aire "backbone")
-* l'utilisation de cette commande est un peu particulière
-* nous ne rentrerons pas dans les détails de fonctionnement (sauf si on a le temps) de OSPF
-* **donc retenez simplement que pour le masque, vous devez écrire l'inverse de d'habitude**
-* c'est à dire `0.0.0.3` au lieu de `255.255.255.252` par exemple
+* l'utilisation de cette commande est un peu particulière concernant le masque de sous-réseau
+  * **vous devez écrire l'inverse de d'habitude, en binaire**
+  * c'est à dire `0.0.0.3` au lieu de `255.255.255.252` par exemple
+  * c'est un "wildcard mask" au lieu de juste un "mask"
 
 **Vérifier l'état d'OSPF** :
 ```
