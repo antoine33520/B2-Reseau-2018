@@ -48,7 +48,8 @@ Pour le dernier lab, vous devrez imaginer une topo qui remet en place tout ce qu
   * l'iOS devra être celui d'un [Cisco 3640](https://drive.google.com/drive/folders/1DFe2u5tZldL_y_UYm32ZbmT0cIfgQM2p)
 
 * les switches :
-  * afin d'utiliser GNS3 comme plateforme pour tous les labs, on utilisera les [iOU dispos sur le même drive]()
+  * afin d'utiliser GNS3 comme plateforme pour tous les labs, on utilisera les [iOU dispos sur le même drive](https://drive.google.com/drive/folders/1LBIlztgGVAk4XsAeovKb1JHBrRg8QPSz)
+    * **tout télécharger pour l'iOU**
   * on va faire l'install ensemble
 
 * les machines virtuelles : 
