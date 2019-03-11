@@ -11,7 +11,8 @@ Vous trouverez ici quelques mini-procédures pour réaliser certaines opération
   * [Garder ses changements après reboot](#garder-les-changements-après-reboot)
   * [Changer son nom de domaine](#changer-son-nom-de-domaine)
   * [Gérer sa table ARP](#gérer-sa-table-arp)
-* Routeurs 
+* Routeurs
+  * [Voir des informations](#voir-des-informations)
   * [Définir une IP statique](#définir-une-ip-statique)
   * [Ajouter une route statique](#ajouter-une-route-statique)
   * [OSPF](#ospf)
@@ -20,6 +21,8 @@ Vous trouverez ici quelques mini-procédures pour réaliser certaines opération
   * [VLAN](#vlan)
 
 ---
+
+## Tous les équipements
 
 ### Les modes du terminal
 Le terminal Cisco possède plusieurs modes
@@ -31,6 +34,53 @@ Mode | Commande | What ? | Why ?
 `global conf` | conf t | Configuration de la machine | Permet de configurer les interface et le routage 
 
 L'idée globale c'est que pour **faire des choses** on passera en `global conf` pour **faire** des choses, et on restera en **user EXEC** pour **voir** des choses.
+
+### Garder les changements après reboot
+Les équipements Cisco possèdent deux configurations (d'une certain façon) :
+* la `running-config`
+  * c'est la conf actuelle
+  * elle contient toutes vos modifications
+  * `# show running-config` pour la voir
+* la `startup-config`
+  * c'est la conf qui est chargée au démarrage de la machine
+  * elle ne contient aucune de vos modifications
+  * `show startup-config`  
+  
+Comment garder vos changements à travers les reboots ? Il faut copier la `running-config` sur la `startup-config` :
+```
+# copy running-config startup-config
+```
+
+---
+
+### Changer son nom de domaine
+**1. Passer en mode configuration**
+```
+# conf t
+```
+
+**2. Changer le hostname**
+```
+(config)# hostname <HOSTNAME>
+```
+
+---
+
+### Gérer sa table ARP
+
+* voir sa table ARP sur un routeur
+```
+# show arp
+```
+
+* voir sa table CAM sur un switch
+```
+# show mac address-table
+```
+
+---
+
+## Routeurs
 
 ### Définir une IP statique
 
@@ -65,24 +115,6 @@ Exemple :
 ```
 ---
 
-### Garder les changements après reboot
-Les équipements Cisco possèdent deux configurations (d'une certain façon) :
-* la `running-config`
-  * c'est la conf actuelle
-  * elle contient toutes vos modifications
-  * `# show running-config` pour la voir
-* la `startup-config`
-  * c'est la conf qui est chargée au démarrage de la machine
-  * elle ne contient aucune de vos modifications
-  * `show startup-config`  
-  
-Comment garder vos changements à travers les reboots ? Il faut copier la `running-config` sur la `startup-config` :
-```
-# copy running-config startup-config
-```
-
----
-
 ### Ajouter une route statique
 
 **Routeur uniquement**  
@@ -108,29 +140,6 @@ Exemple, pour ajouter une route vers le réseau 10.1.0.0/24 en passant par la pa
 ```
 (config)# exit
 # show ip route
-```
-
-### Changer son nom de domaine
-**1. Passer en mode configuration**
-```
-# conf t
-```
-
-**2. Changer le hostname**
-```
-(config)# hostname <HOSTNAME>
-```
-
-### Gérer sa table ARP
-
-* voir sa table ARP sur un routeur
-```
-# show arp
-```
-
-* voir sa table CAM sur un switch
-```
-# show mac address-table
 ```
 
 ### OSPF
@@ -211,6 +220,7 @@ Exemple, pour ajouter une route vers le réseau 10.1.0.0/24 en passant par la pa
 ```
 
 ---
+## Switches
 
 ### VLAN
 

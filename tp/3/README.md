@@ -120,6 +120,7 @@ Hosts | `10.1.1.0/24`
 #### > Vérification
 * [ ] [Nom de domaines](../../cours/procedures.md#changer-son-nom-de-domaine) sur toutes les machines
 * [ ] Toutes les machines doivent pouvoir se `ping`
+  * "toutes les machines", c'est les clients hein. Un switch n'a pas d'IP.
 
 # 2. Configuration des VLANs
 
@@ -146,6 +147,7 @@ client1           SW1                  SW 2
 #### > Vérification
 * [ ] `client1.lab1.tp3` peut joindre `client3.lab1.tp3`
   * `ping` et/ou [`traceroute`](../../cours/lexique.md#traceroute)
+  * `sudo traceroute -I <host>` c'est pas mal. Pourquoi ? `man traceroute` ;)
 * [ ] `client2.lab1.tp3` n'est joignable par personne
 
 ---
@@ -199,7 +201,7 @@ Hosts | `lab2-net1` |  `lab2-net2` |  `lab2-net12`
 * pour les IPs des machines Cisco, [référez-vous à la section dédiée dans les procédures Cisco](../../cours/procedures-cisco.md#définir-une-ip-statique)
 
 #### > Vérification
-* [ ] les clients et serveurs peuvent joindre leurs gateways respectives
+* [ ] les clients et serveurs peuvent joindre leurs [gateways](../../lexique.md#passerelle-ou-gateway) respectives
 * [ ] les routeurs peuvent discuter entre eux
 
 ## 2. Configuration du routage statique
