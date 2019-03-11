@@ -257,6 +257,20 @@
 ### Routage ou *routing*
 * c'est le fait de mettre en place et de configurer un [routeur](#routeur)
 
+### Route
+Une route, c'est une direction vers un réseau, comme une route dans la vie réelle. C'est le panneau qui pointe vers une destination donnée.  
+
+En réseau ça se traduit par :
+* un réseau de destination
+* une interface de sortie
+* (optionnel) la [passerelle](#passerelle-ou-gateway) pour joindre le réseau
+
+Exemples :
+* réseau auquel on est directement connecté : 
+  * `192.168.1.0/24` <-> `interface WiFi`
+* réseau nécessitant une passerelle : 
+  * `10.1.1.0/24` <-> `interface WiFi` + `192.168.1.254`
+
 ### Routeur
 * **Très important**
 * un routeur est un équipement sur le réseau 
