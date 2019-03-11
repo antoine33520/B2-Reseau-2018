@@ -9,7 +9,7 @@ C'est quoi un routeur Cisco ? C'est comme votre PC, un serveur, ou une machine v
 ## Sommaire
 
 * Tous les équipements
-  * [Présentation du terminal Cisco](#presentation-du-terminal-cisco)
+  * [Présentation du terminal Cisco](#présentation-du-terminal-cisco)
   * [Garder ses changements après reboot](#garder-les-changements-après-reboot)
   * [Changer son nom de domaine](#changer-son-nom-de-domaine)
   * [Gérer sa table ARP](#gérer-sa-table-arp)
