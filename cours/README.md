@@ -67,10 +67,9 @@
 
 * connaissances techniques en réseau
   * modèle OSI et principaux protocoles
-    * PDU ("trames", "paquets", "datagramme")
   * Internet
   * design réseau
-    * + adressage IP
+    * adressage IP
   * sécurité
   * fonctionnement du routage/encapsulation
   
