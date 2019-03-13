@@ -183,6 +183,8 @@ client1          +------+               +------+
 
 ```
 
+***Hint : regardez bien les IPs, il y a une machine cliente qui n'a pas de passerelle... Elle ne pourra pas accéder au réseau.***
+
 #### > Réseau(x)
 
 Nom | Adresse
@@ -219,6 +221,8 @@ Sur toutes les machines :
 
 #### > Vérification
 * [ ] tous les clients et serveurs peuvent se joindre
+  * sauf le client qui n'a pas de passerelle
+  * proposez une topologie où tous les clients auraient la même passerelle (vous avez le droit d'ajouter des équipements)
 
 ---
 
