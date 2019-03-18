@@ -264,7 +264,7 @@ Exemple, pour ajouter une route vers le réseau 10.1.0.0/24 en passant par la pa
 
 ### VLAN
 
-[Le cours possède un passage détaillé à ce sujet.](../../cours/3.md#vlan)
+[Le cours possède un passage détaillé à ce sujet.](./3.md#vlan)
 
 **Switches uniquement**  
 
