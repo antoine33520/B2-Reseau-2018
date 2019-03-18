@@ -280,6 +280,7 @@ Exemple, pour ajouter une route vers le réseau 10.1.0.0/24 en passant par la pa
 ```
 
 **2. Créer le VLAN**
+  * le nom est arbitraire, essayez d'utiliser des noms clairs
 ```
 (config)# vlan 10
 (config-vlan)# name client-network
