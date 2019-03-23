@@ -206,7 +206,7 @@ Hosts | `lab2-net1` |  `lab2-net2` |  `lab2-net12`
 * pour les IPs des machines Cisco, [référez-vous à la section dédiée dans les procédures Cisco](../../cours/procedures-cisco.md#définir-une-ip-statique)
 
 #### > Vérification
-* [ ] les clients et serveurs peuvent joindre leurs [gateways](../../lexique.md#passerelle-ou-gateway) respectives
+* [ ] les clients et serveurs peuvent joindre leurs [gateways](../../cours/lexique.md#passerelle-ou-gateway) respectives
 * [ ] les routeurs peuvent discuter entre eux
 
 ## 2. Configuration du routage statique
