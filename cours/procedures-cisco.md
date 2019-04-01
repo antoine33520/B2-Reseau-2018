@@ -216,6 +216,11 @@ Exemple, pour ajouter une route vers le réseau 10.1.0.0/24 en passant par la pa
   * c'est à dire `0.0.0.3` au lieu de `255.255.255.252` par exemple
   * c'est un "wildcard mask" au lieu de juste un "mask"
 
+**(facultatif) 5. Partager une route par défaut**
+```
+(config-router)# default-information originate
+```
+
 **Vérifier l'état d'OSPF** :
 ```
 # show ip protocols
@@ -264,6 +269,8 @@ Exemple, pour ajouter une route vers le réseau 10.1.0.0/24 en passant par la pa
 
 ### VLAN
 
+[Le cours possède un passage détaillé à ce sujet.](./3.md#vlan)
+
 **Switches uniquement**  
 
 **0. Pour voir les VLANs actuels du switch**
@@ -278,6 +285,7 @@ Exemple, pour ajouter une route vers le réseau 10.1.0.0/24 en passant par la pa
 ```
 
 **2. Créer le VLAN**
+  * le nom est arbitraire, essayez d'utiliser des noms clairs
 ```
 (config)# vlan 10
 (config-vlan)# name client-network

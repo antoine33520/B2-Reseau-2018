@@ -206,7 +206,7 @@ Hosts | `lab2-net1` |  `lab2-net2` |  `lab2-net12`
 * pour les IPs des machines Cisco, [référez-vous à la section dédiée dans les procédures Cisco](../../cours/procedures-cisco.md#définir-une-ip-statique)
 
 #### > Vérification
-* [ ] les clients et serveurs peuvent joindre leurs [gateways](../../lexique.md#passerelle-ou-gateway) respectives
+* [ ] les clients et serveurs peuvent joindre leurs [gateways](../../cours/lexique.md#passerelle-ou-gateway) respectives
 * [ ] les routeurs peuvent discuter entre eux
 
 ## 2. Configuration du routage statique
@@ -247,8 +247,8 @@ Hosts | `10.3.100.0/30` | `10.3.100.4/30` | `10.3.100.8/30` | `10.3.100.12/30` |
 `client1.lab3.tp3` | x | x | x | x | x | x | `10.3.101.10/24` | x 
 `server1.lab3.tp3` | x | x | x | x | x | x | x | `10.3.102.10/24` 
 `router1.lab3.tp3` | `10.3.100.1/30` | x | x | x | x | `10.3.100.22/30` | x | `10.3.102.254/24` 
-`router2.lab3.tp3` | `10.3.100.2/30` | `10.3.100.4/30` | x | x | x | x | x | x 
-`router3.lab3.tp3` | x | `10.3.100.5/30` | `10.3.100.9/30` | x | x | x | x | x 
+`router2.lab3.tp3` | `10.3.100.2/30` | `10.3.100.5/30` | x | x | x | x | x | x 
+`router3.lab3.tp3` | x | `10.3.100.6/30` | `10.3.100.9/30` | x | x | x | x | x 
 `router4.lab3.tp3` | x | x | `10.3.100.10/30` | `10.3.100.13/30` | x | x | `10.3.101.254/24` | x 
 `router5.lab3.tp3` | x | x | x | `10.3.100.14/30` | `10.3.100.17/30` | x | x | x 
 `router6.lab3.tp3` | x | x | x | x | `10.3.100.18/30` | `10.3.100.21/30` | x | x 
