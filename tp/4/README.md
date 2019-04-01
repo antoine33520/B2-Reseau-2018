@@ -13,7 +13,10 @@ Au global :
   * supprimer les boucles de réseau L2 : STP
   * redondance de liens réseau : LACP, Etherchannel
 
-Secu :
+---
+
+# Sujet 1 : Secu
+
 * sécu
   * confidentialité
   * intégrité
@@ -43,7 +46,7 @@ Secu :
   
 ---
 
-Infra 1 :
+# Sujet 2 : Infra campus
 * Campus
   * 3 bâtiments
     * 2 étages, 5 salles/étages
@@ -75,7 +78,7 @@ Infra 1 :
 
 ---
 
-Infra 2 :
+# Sujet 3 : Infra 2 smal/medium office
 * Small/Medium office
   * 1 bâtiment
     * 5 salles
