@@ -1,46 +1,45 @@
-# MENU
+# TP 4 : Le MENU
 
-Au global :
-* principaux axes auxquels penser :
-  * sécu
-    * confidentialité
-    * intégrité
-    * confidentialité
-  * HA
-    * haute-disponibilité
-    * redondance
-    * no SPOF
-  * évolutivité
-    * penser à l'augmentation du nombre de clients du réseau
-    * penser à un bon nommage des machines
+#### Principaux axes auxquels penser
+* **sécu**
+  * confidentialité
+  * intégrité
+  * confidentialité
+* **HA**
+  * haute-disponibilité
+  * redondance
+  * no SPOF
+* **évolutivité**
+  * penser à l'augmentation du nombre de clients du réseau
+  * penser à un bon nommage des machines
 
-* technos réseau intéressantes à mettre en place :
-  * firewall
-    * sur les machines serveurs
-    * en frontal, dans le backbone
-  * isolation réseau : VLAN
-  * haute-dispo routeur : HSRP, VRRP
-  * routage dynamique : OSPF
-  * supprimer les boucles de réseau L2 : STP
-  * redondance de liens réseau : LACP, Etherchannel
+#### Technos réseau intéressantes à mettre en place
+* firewall
+  * sur les machines serveurs
+  * en frontal, dans le backbone
+* isolation réseau : [VLAN](../../cours/3.md#vlan)
+* haute-dispo routeur : HSRP, VRRP
+* routage dynamique : [OSPF](../../cours/3.md#ospf)
+* supprimer les boucles de réseau L2 : STP
+* redondance de liens réseau : LACP, Etherchannel
 
-* service réseau intéressants pour une infra
-  * DHCP
-  * DNS
-  * NTP
-  * Serv Web
-    * pour simuler un intranet ou autres site interne/externe
+#### service réseau intéressants pour une infra
+* DHCP
+* DNS
+* NTP
+* Serv Web
+  * pour simuler un intranet ou autres site interne/externe
 
-* bonnes pratiques de configuration de l'infra
-  * toutes les machines ont un hostname
-    * il est explicite
-  * les machines peuvent communiquer à l'aide de hostnames
-    * `/etc/hosts` ou DNS
-  * on peut accéder à distance aux équipements
-    * SSH ou RDP
-    * accès sécurisé
-  * il existe un référentiel des machines existantes 
-    * on peut facilement connaître leur nom, leur IP, leur rôle dans l'infra
+#### Bonnes pratiques de configuration de l'infra
+* toutes les machines ont un **hostname**
+  * il est explicite
+* les machines peuvent communiquer à l'aide de hostnames
+  * `/etc/hosts` ou DNS
+* on peut **accéder à distance aux équipements**
+  * SSH ou RDP
+  * accès sécurisé
+* il existe **un référentiel des machines existantes**
+  * on peut facilement connaître leur nom, leur IP, leur rôle dans l'infra
 
 ---
 
