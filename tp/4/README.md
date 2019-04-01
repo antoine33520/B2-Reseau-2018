@@ -1,6 +1,10 @@
 # TP 4 : Le MENU
 
-#### Principaux axes auxquels penser
+* [Menu 1 : Sécu](#menu-1--secu)
+* [Menu 2 : Campus](#menu-2--infra-campus)
+* [Menu 3 : Small/medium Office](#menu-3--infra-smallmedium-office)
+
+#### > Principaux axes auxquels penser :
 
 * **sécu**
   * confidentialité
@@ -14,7 +18,7 @@
   * penser à l'augmentation du nombre de clients du réseau
   * penser à un bon nommage des machines
 
-#### Technos réseau intéressantes à mettre en place
+#### > Technos réseau intéressantes à mettre en place :
 
 * firewall
   * sur les machines serveurs
@@ -25,7 +29,7 @@
 * supprimer les boucles de réseau L2 : STP
 * redondance de liens réseau : LACP, Etherchannel
 
-#### service réseau intéressants pour une infra
+#### > Service réseau intéressants pour une infra
 
 * DHCP
 * DNS
@@ -33,7 +37,7 @@
 * Serv Web
   * pour simuler un intranet ou autres site interne/externe
 
-#### Bonnes pratiques de configuration de l'infra
+#### > Bonnes pratiques de configuration de l'infra
 
 * toutes les machines ont un **hostname**
   * il est explicite
@@ -51,14 +55,14 @@
 
 **Renforcer la sécurité d'une topologie simple qui comporte quelques services réseaux.**
 
-#### Infra
+#### > Infra
 
 * un petit truc suffira
   * backbone (= accès WAN/LAN)
   * switches d'accès clients
   * clients
 
-#### Sécurité des flux
+#### > Sécurité des flux
 
 * firewall frontal
   * pfsense (ou opensense)
@@ -68,7 +72,7 @@
 * authentification forte sur les équipements
   * SSH (routeurs, switches, VM)
 
-#### Services réseau
+#### > Services réseau
 
 * DNS + DNSSEC
 * Serveur Web + WAF 
@@ -76,7 +80,7 @@
   * NGINX + naxsi
   * ou autres
 
-#### Monitoring/Métrologie
+#### > Monitoring/Métrologie
 
 * inspection de flux réseau
   * détection des flux réseau
@@ -85,7 +89,7 @@
     * il y a tel trafic qui circule dans tel lien
 * DPI (deep packet inspection)
 
-#### Rendu attendu
+#### > Rendu attendu
 * choix + explication des choix effectués
   * en quoi ça c'est secure ? ou + secure qu'autre chose ?
 * maquette
@@ -96,12 +100,12 @@
 
 **Fournir un réseau stable à un grand nombre de clients sur un même site.**
 
-#### Locaux
+#### > Locaux
 * 3 bâtiments
   * 2 étages, 5 salles/étages
   * chaque salle supporte au mini 30 clients
 
-#### Clients du réseau
+#### > Clients du réseau
 
 * ~200 étudiants
   * en moyenne, ils ont 1,5 équipements
@@ -115,7 +119,7 @@
 * 15 caméras
 * 2 admins
 
-#### Besoin
+#### > Besoin
 
 * les étudiants ont accès à 10 serveurs sur les 20
 * les profs ont accès à tous les serveurs
@@ -124,7 +128,7 @@
   * étudiant/profs/admins : 1Mo/sec
   * serveur : 5Mo/sec
 
-#### Rendu attendu
+#### > Rendu attendu
 
 * plan d'adressage IP
 * plan des VLANs
@@ -142,13 +146,13 @@
 
 **Fournir un accès Internet robuste et des services réseau utiles et récurrents.**
 
-#### Locaux
+#### > Locaux
 
 * 1 bâtiment
   * 5 salles
   * 1 à 5 personnes/salle
 
-#### Clients du réseau
+#### > Clients du réseau
 
 * ~20 personnes pro
 * 3 RH
@@ -158,7 +162,7 @@
 
 > Les gens (RH, pro, admin) n'ont QUE leur PC (pas de tablette/smartphone)
 
-#### Besoin
+#### > Besoin
 
 * pro et RH joignent les imprimantes et 2 serveurs
 * l'admin joint tout le monde
@@ -170,7 +174,7 @@
 * firewall frontal (centos ou pfsense/opensense ou autres)
 * serveur web redondé, sécurisé (nginx, haproxy, keepalived, etc.)
 
-#### Rendu attendu
+#### > Rendu attendu
 
 * plan d'adressage IP
 * plan des VLANs
