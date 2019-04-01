@@ -1,6 +1,7 @@
 # TP 4 : Le MENU
 
 #### Principaux axes auxquels penser
+
 * **sécu**
   * confidentialité
   * intégrité
@@ -14,6 +15,7 @@
   * penser à un bon nommage des machines
 
 #### Technos réseau intéressantes à mettre en place
+
 * firewall
   * sur les machines serveurs
   * en frontal, dans le backbone
@@ -24,6 +26,7 @@
 * redondance de liens réseau : LACP, Etherchannel
 
 #### service réseau intéressants pour une infra
+
 * DHCP
 * DNS
 * NTP
@@ -31,6 +34,7 @@
   * pour simuler un intranet ou autres site interne/externe
 
 #### Bonnes pratiques de configuration de l'infra
+
 * toutes les machines ont un **hostname**
   * il est explicite
 * les machines peuvent communiquer à l'aide de hostnames
@@ -43,17 +47,19 @@
 
 ---
 
-# Sujet 1 : Secu
+# Menu 1 : Secu
 
 **Renforcer la sécurité d'une topologie simple qui comporte quelques services réseaux.**
 
 #### Infra
+
 * un petit truc suffira
   * backbone (= accès WAN/LAN)
   * switches d'accès clients
   * clients
 
 #### Sécurité des flux
+
 * firewall frontal
   * pfsense (ou opensense)
   * ou hardened CentOS
@@ -63,6 +69,7 @@
   * SSH (routeurs, switches, VM)
 
 #### Services réseau
+
 * DNS + DNSSEC
 * Serveur Web + WAF 
   * apache + modsecurity
@@ -70,6 +77,7 @@
   * ou autres
 
 #### Monitoring/Métrologie
+
 * inspection de flux réseau
   * détection des flux réseau
   * visualisation
@@ -84,7 +92,7 @@
 
 ---
 
-# Sujet 2 : Infra campus
+# Menu 2 : Infra campus
 
 **Fournir un réseau stable à un grand nombre de clients sur un même site.**
 
@@ -94,6 +102,7 @@
   * chaque salle supporte au mini 30 clients
 
 #### Clients du réseau
+
 * ~200 étudiants
   * en moyenne, ils ont 1,5 équipements
     * tous ont un PC
@@ -107,6 +116,7 @@
 * 2 admins
 
 #### Besoin
+
 * les étudiants ont accès à 10 serveurs sur les 20
 * les profs ont accès à tous les serveurs
 * les admins ont accès à tous les serveurs et aux caméras
@@ -115,6 +125,7 @@
   * serveur : 5Mo/sec
 
 #### Rendu attendu
+
 * plan d'adressage IP
 * plan des VLANs
 * schéma de la topologie
@@ -127,7 +138,7 @@
 
 ---
 
-# Sujet 3 : Infra 2 smal/medium office
+# Menu 3 : Infra small/medium office
 
 **Fournir un accès Internet robuste et des services réseau utiles et récurrents.**
 
@@ -138,13 +149,17 @@
   * 1 à 5 personnes/salle
 
 #### Clients du réseau
+
 * ~20 personnes pro
 * 3 RH
 * 1 admin
 * 5 serveurs
 * 5 imprimantes
 
+> Les gens (RH, pro, admin) n'ont QUE leur PC (pas de tablette/smartphone)
+
 #### Besoin
+
 * pro et RH joignent les imprimantes et 2 serveurs
 * l'admin joint tout le monde
 * débit descendant WAN exigé
@@ -156,6 +171,7 @@
 * serveur web redondé, sécurisé (nginx, haproxy, keepalived, etc.)
 
 #### Rendu attendu
+
 * plan d'adressage IP
 * plan des VLANs
 * schéma de la topologie
