@@ -4,6 +4,13 @@
 * [Menu 2 : Campus](#menu-2--infra-campus)
 * [Menu 3 : Small/medium Office](#menu-3--infra-smallmedium-office)
 
+## Attentes pour ce TP
+* utiliser un outil pour noter vos avancées, et que je puisse les consulter
+  * une dépôt git public peut faire l'affaire
+* utiliser un outil pour gérer votre projet/vos tâches
+  * l'onglet "Projects" d'un dépôt git peut faire l'affaire (c'est juste un kanban)
+* référez-vous à la partie ***"Rendu attendu"*** de chaque menu pour plus de détails concernant tel ou tel menu spécifiquement
+
 #### > Principaux axes auxquels penser :
 
 * **sécu**
