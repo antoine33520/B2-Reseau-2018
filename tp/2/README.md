@@ -221,7 +221,7 @@ Dans cette partie on va se rapprocher un peu de ce qu'on peut voir dans des infr
 
 ### Présentation
 
-**"Faire du NAT" est un rôle que peut jouer un [routeur]../../cours/lexique.md#routeur)** :
+**"Faire du NAT" est un rôle que peut jouer un [routeur](../../cours/lexique.md#routeur)** :
 * qui possède une interface qui peut joindre le WAN
   * dans lequel on trouve des IPs publiques
   * comme internet
