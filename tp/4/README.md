@@ -31,7 +31,7 @@
   * sur les machines serveurs
   * en frontal, dans le backbone
 * isolation réseau : [VLAN](../../cours/3.md#vlan)
-* haute-dispo routeur : HSRP, VRRP
+* haute-dispo routeur : HSRP, VRRP, GLBP
 * routage dynamique : [OSPF](../../cours/3.md#ospf)
 * supprimer les boucles de réseau L2 : STP
 * redondance de liens réseau : LACP, Etherchannel
